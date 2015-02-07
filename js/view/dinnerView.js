@@ -1,5 +1,5 @@
 //ExampleView Object constructor
-var ExampleView = function (container) {
+var DinnerView = function (container) {
 	
 	// Get all the relevant elements of the view (ones that show data
   	// and/or ones that responed to interaction)
@@ -8,6 +8,5 @@ var ExampleView = function (container) {
 	this.minusButton = container.find("#minusGuest");
 	
 	this.numberOfGuests.html("Hello World");
-	
 }
  
