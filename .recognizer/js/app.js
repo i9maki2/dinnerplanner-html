@@ -3,7 +3,7 @@
  * https://github.com/equiet/recognizer
  */
 
-var __recognizer150274815 = (function () {
+var __recognizer413741096 = (function () {
     'use strict';
 
     var global = this;
@@ -157,59 +157,64 @@ var __recognizer150274815 = (function () {
  * Instrumented code
  */
 
-__recognizer150274815.logProbe([
+__recognizer413741096.logProbe([
     1,
     0,
-    10,
+    6,
     2
-], __recognizer150274815.logProbe([
+], __recognizer413741096.logProbe([
     1,
     0,
     1,
     1
 ], $)(function () {
-    __recognizer150274815.logEntry([
+    __recognizer413741096.logEntry([
         1,
         2,
         1,
         10
     ], arguments);
-    var dinnerModel = new (__recognizer150274815.logProbe([
+    var model = new (__recognizer413741096.logProbe([
+            3,
+            18,
+            3,
+            29
+        ], DinnerModel))(), view = new (__recognizer413741096.logProbe([
             4,
-            23,
+            19,
             4,
-            34
-        ], DinnerModel))();
-    var dinnerView = new (__recognizer150274815.logProbe([
-            7,
-            22,
-            7,
-            32
-        ], DinnerView))(__recognizer150274815.logProbe([
-            7,
-            33,
-            7,
-            49
-        ], __recognizer150274815.logProbe([
-            7,
-            33,
-            7,
-            34
-        ], $)('#dinnerView')));
-    var dinnerController = new (__recognizer150274815.logProbe([
-            8,
-            28,
-            8,
-            44
-        ], DinnerController))(__recognizer150274815.logProbe([
-            8,
-            45,
-            8,
-            56
-        ], dinnerModel), __recognizer150274815.logProbe([
-            8,
-            58,
-            8,
-            68
-        ], dinnerView));
+            29
+        ], DinnerView))(__recognizer413741096.logProbe([
+            4,
+            30,
+            4,
+            35
+        ], model), {
+            'dinnerView': __recognizer413741096.logProbe([
+                4,
+                52,
+                4,
+                68
+            ], __recognizer413741096.logProbe([
+                4,
+                52,
+                4,
+                53
+            ], $)('#dinnerView'))
+        }), controller = new (__recognizer413741096.logProbe([
+            5,
+            25,
+            5,
+            41
+        ], DinnerController))(__recognizer413741096.logProbe([
+            5,
+            42,
+            5,
+            47
+        ], model), __recognizer413741096.logProbe([
+            5,
+            49,
+            5,
+            53
+        ], view));
 }));
