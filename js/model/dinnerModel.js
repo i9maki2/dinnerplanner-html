@@ -3,7 +3,7 @@ var DinnerModel = function() {
  
 	//TODO Lab 2 implement the data structure that will hold number of guest
 	// and selected dinner options for dinner menu
-	this.numberOfGuests;
+	this.numberOfGuests = 0;
 	this.selectedDish;
 	this.numberOfGuests;	
 	this.ingredients;
@@ -96,6 +96,11 @@ var DinnerModel = function() {
 				if(this.menu[i].id === id)
 				{
 					this.menu.splice(i, 1);
+				}
+				else
+				{
+					//Change this accordingly!
+					console.log("The Dish is not in the Menu!")
 				}
 			};
 		}
