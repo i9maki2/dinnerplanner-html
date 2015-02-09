@@ -3,7 +3,7 @@
  * https://github.com/equiet/recognizer
  */
 
-var __recognizer245034980 = (function () {
+var __recognizer204540227 = (function () {
     'use strict';
 
     var global = this;
@@ -157,56 +157,56 @@ var __recognizer245034980 = (function () {
  * Instrumented code
  */
 
-__recognizer245034980.logProbe([
+__recognizer204540227.logProbe([
     1,
     0,
     10,
     2
-], __recognizer245034980.logProbe([
+], __recognizer204540227.logProbe([
     1,
     0,
     1,
     1
 ], $)(function () {
-    __recognizer245034980.logEntry([
+    __recognizer204540227.logEntry([
         1,
         2,
         1,
         10
     ], arguments);
-    var dinnerModel = new (__recognizer245034980.logProbe([
+    var dinnerModel = new (__recognizer204540227.logProbe([
             4,
             23,
             4,
             34
         ], DinnerModel))();
-    var dinnerView = new (__recognizer245034980.logProbe([
+    var dinnerView = new (__recognizer204540227.logProbe([
             7,
             22,
             7,
             32
-        ], DinnerView))(__recognizer245034980.logProbe([
+        ], DinnerView))(__recognizer204540227.logProbe([
             7,
             33,
             7,
             49
-        ], __recognizer245034980.logProbe([
+        ], __recognizer204540227.logProbe([
             7,
             33,
             7,
             34
         ], $)('#dinnerView')));
-    var dinnerController = new (__recognizer245034980.logProbe([
+    var dinnerController = new (__recognizer204540227.logProbe([
             8,
             28,
             8,
             44
-        ], DinnerController))(__recognizer245034980.logProbe([
+        ], DinnerController))(__recognizer204540227.logProbe([
             8,
             45,
             8,
             56
-        ], dinnerModel), __recognizer245034980.logProbe([
+        ], dinnerModel), __recognizer204540227.logProbe([
             8,
             58,
             8,

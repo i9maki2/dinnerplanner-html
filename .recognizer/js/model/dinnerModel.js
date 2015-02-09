@@ -3,7 +3,7 @@
  * https://github.com/equiet/recognizer
  */
 
-var __recognizer499507596 = (function () {
+var __recognizer557738096 = (function () {
     'use strict';
 
     var global = this;
@@ -158,62 +158,62 @@ var __recognizer499507596 = (function () {
  */
 
 var DinnerModel = function () {
-    __recognizer499507596.logEntry([
+    __recognizer557738096.logEntry([
         2,
         18,
         2,
         26
     ], arguments);
-    __recognizer499507596.logProbe([
+    __recognizer557738096.logProbe([
         6,
         6,
         6,
         20
-    ], __recognizer499507596.logProbe([
+    ], __recognizer557738096.logProbe([
         6,
         1,
         6,
         5
     ], this).numberOfGuests);
-    __recognizer499507596.logProbe([
+    __recognizer557738096.logProbe([
         7,
         6,
         7,
         18
-    ], __recognizer499507596.logProbe([
+    ], __recognizer557738096.logProbe([
         7,
         1,
         7,
         5
     ], this).selectedDish);
-    __recognizer499507596.logProbe([
+    __recognizer557738096.logProbe([
         8,
         6,
         8,
         20
-    ], __recognizer499507596.logProbe([
+    ], __recognizer557738096.logProbe([
         8,
         1,
         8,
         5
     ], this).numberOfGuests);
-    __recognizer499507596.logProbe([
+    __recognizer557738096.logProbe([
         9,
         6,
         9,
         17
-    ], __recognizer499507596.logProbe([
+    ], __recognizer557738096.logProbe([
         9,
         1,
         9,
         5
     ], this).ingredients);
-    __recognizer499507596.logProbe([
+    __recognizer557738096.logProbe([
         10,
         6,
         10,
         20
-    ], __recognizer499507596.logProbe([
+    ], __recognizer557738096.logProbe([
         10,
         1,
         10,
@@ -221,13 +221,13 @@ var DinnerModel = function () {
     ], this).totalMenuPrice);
     this.menu = [];
     this.setNumberOfGuests = function (num) {
-        __recognizer499507596.logEntry([
+        __recognizer557738096.logEntry([
             14,
             26,
             14,
             34
         ], arguments);
-        this.numberOfGuests = __recognizer499507596.logProbe([
+        this.numberOfGuests = __recognizer557738096.logProbe([
             15,
             24,
             15,
@@ -235,18 +235,18 @@ var DinnerModel = function () {
         ], num);
     };
     this.getNumberOfGuests = function () {
-        __recognizer499507596.logEntry([
+        __recognizer557738096.logEntry([
             19,
             26,
             19,
             34
         ], arguments);
-        return __recognizer499507596.logProbe([
+        return __recognizer557738096.logProbe([
             20,
             14,
             20,
             28
-        ], __recognizer499507596.logProbe([
+        ], __recognizer557738096.logProbe([
             20,
             9,
             20,
@@ -254,7 +254,7 @@ var DinnerModel = function () {
         ], this).numberOfGuests);
     };
     this.getSelectedDish = function () {
-        __recognizer499507596.logEntry([
+        __recognizer557738096.logEntry([
             24,
             24,
             24,
@@ -262,35 +262,35 @@ var DinnerModel = function () {
         ], arguments);
     };
     this.getFullMenu = function () {
-        __recognizer499507596.logEntry([
+        __recognizer557738096.logEntry([
             29,
             20,
             29,
             28
         ], arguments);
-        if (__recognizer499507596.logProbe([
+        if (__recognizer557738096.logProbe([
                 30,
                 15,
                 30,
                 21
-            ], __recognizer499507596.logProbe([
+            ], __recognizer557738096.logProbe([
                 30,
                 10,
                 30,
                 14
-            ], __recognizer499507596.logProbe([
+            ], __recognizer557738096.logProbe([
                 30,
                 5,
                 30,
                 9
             ], this).menu).length) === 0) {
             (function () {
-                var obj = __recognizer499507596.logProbe([
+                var obj = __recognizer557738096.logProbe([
                         33,
                         3,
                         33,
                         10
-                    ], console), fn = __recognizer499507596.logProbe([
+                    ], console), fn = __recognizer557738096.logProbe([
                         33,
                         11,
                         33,
@@ -299,12 +299,12 @@ var DinnerModel = function () {
                 return fn.apply(obj, arguments);
             }.bind(this)('The Menu is empty!'));
         } else {
-            return __recognizer499507596.logProbe([
+            return __recognizer557738096.logProbe([
                 37,
                 15,
                 37,
                 19
-            ], __recognizer499507596.logProbe([
+            ], __recognizer557738096.logProbe([
                 37,
                 10,
                 37,
@@ -313,35 +313,35 @@ var DinnerModel = function () {
         }
     };
     this.getAllIngredients = function () {
-        __recognizer499507596.logEntry([
+        __recognizer557738096.logEntry([
             42,
             26,
             42,
             34
         ], arguments);
-        if (__recognizer499507596.logProbe([
+        if (__recognizer557738096.logProbe([
                 44,
                 15,
                 44,
                 21
-            ], __recognizer499507596.logProbe([
+            ], __recognizer557738096.logProbe([
                 44,
                 10,
                 44,
                 14
-            ], __recognizer499507596.logProbe([
+            ], __recognizer557738096.logProbe([
                 44,
                 5,
                 44,
                 9
             ], this).menu).length) === 0) {
             (function () {
-                var obj = __recognizer499507596.logProbe([
+                var obj = __recognizer557738096.logProbe([
                         47,
                         3,
                         47,
                         10
-                    ], console), fn = __recognizer499507596.logProbe([
+                    ], console), fn = __recognizer557738096.logProbe([
                         47,
                         11,
                         47,
@@ -351,107 +351,107 @@ var DinnerModel = function () {
             }.bind(this)('The Menu is empty!'));
         } else {
             this.ingredients = [];
-            for (var i = 0; __recognizer499507596.logProbe([
+            for (var i = 0; __recognizer557738096.logProbe([
                     51,
                     19,
                     51,
                     20
-                ], i) < __recognizer499507596.logProbe([
+                ], i) < __recognizer557738096.logProbe([
                     51,
                     33,
                     51,
                     39
-                ], __recognizer499507596.logProbe([
+                ], __recognizer557738096.logProbe([
                     51,
                     28,
                     51,
                     32
-                ], __recognizer499507596.logProbe([
+                ], __recognizer557738096.logProbe([
                     51,
                     23,
                     51,
                     27
-                ], this).menu).length); __recognizer499507596.logProbe([
+                ], this).menu).length); __recognizer557738096.logProbe([
                     51,
                     41,
                     51,
                     42
                 ], i)++) {
-                for (var j = 0; __recognizer499507596.logProbe([
+                for (var j = 0; __recognizer557738096.logProbe([
                         52,
                         20,
                         52,
                         21
-                    ], j) < __recognizer499507596.logProbe([
+                    ], j) < __recognizer557738096.logProbe([
                         52,
                         49,
                         52,
                         55
-                    ], __recognizer499507596.logProbe([
+                    ], __recognizer557738096.logProbe([
                         52,
                         37,
                         52,
                         48
-                    ], __recognizer499507596.logProbe([
+                    ], __recognizer557738096.logProbe([
                         52,
                         34,
                         52,
                         35
-                    ], __recognizer499507596.logProbe([
+                    ], __recognizer557738096.logProbe([
                         52,
                         29,
                         52,
                         33
-                    ], __recognizer499507596.logProbe([
+                    ], __recognizer557738096.logProbe([
                         52,
                         24,
                         52,
                         28
-                    ], this).menu)[i]).ingredients).length); __recognizer499507596.logProbe([
+                    ], this).menu)[i]).ingredients).length); __recognizer557738096.logProbe([
                         52,
                         57,
                         52,
                         58
                     ], j)++) {
                     (function () {
-                        var obj = __recognizer499507596.logProbe([
+                        var obj = __recognizer557738096.logProbe([
                                 53,
                                 10,
                                 53,
                                 21
-                            ], __recognizer499507596.logProbe([
+                            ], __recognizer557738096.logProbe([
                                 53,
                                 5,
                                 53,
                                 9
-                            ], this).ingredients), fn = __recognizer499507596.logProbe([
+                            ], this).ingredients), fn = __recognizer557738096.logProbe([
                                 53,
                                 22,
                                 53,
                                 26
                             ], obj.push);
                         return fn.apply(obj, arguments);
-                    }.bind(this)(__recognizer499507596.logProbe([
+                    }.bind(this)(__recognizer557738096.logProbe([
                         53,
                         52,
                         53,
                         53
-                    ], __recognizer499507596.logProbe([
+                    ], __recognizer557738096.logProbe([
                         53,
                         40,
                         53,
                         51
-                    ], __recognizer499507596.logProbe([
+                    ], __recognizer557738096.logProbe([
                         53,
                         37,
                         53,
                         38
-                    ], __recognizer499507596.logProbe([
+                    ], __recognizer557738096.logProbe([
                         53,
                         32,
                         53,
                         36
-                    ], __recognizer499507596.logProbe([
+                    ], __recognizer557738096.logProbe([
                         53,
                         27,
                         53,
@@ -461,12 +461,12 @@ var DinnerModel = function () {
                 ;
             }
             ;
-            return __recognizer499507596.logProbe([
+            return __recognizer557738096.logProbe([
                 57,
                 14,
                 57,
                 25
-            ], __recognizer499507596.logProbe([
+            ], __recognizer557738096.logProbe([
                 57,
                 9,
                 57,
@@ -475,35 +475,35 @@ var DinnerModel = function () {
         }
     };
     this.getTotalMenuPrice = function () {
-        __recognizer499507596.logEntry([
+        __recognizer557738096.logEntry([
             62,
             26,
             62,
             34
         ], arguments);
-        if (__recognizer499507596.logProbe([
+        if (__recognizer557738096.logProbe([
                 64,
                 15,
                 64,
                 21
-            ], __recognizer499507596.logProbe([
+            ], __recognizer557738096.logProbe([
                 64,
                 10,
                 64,
                 14
-            ], __recognizer499507596.logProbe([
+            ], __recognizer557738096.logProbe([
                 64,
                 5,
                 64,
                 9
             ], this).menu).length) === 0) {
             (function () {
-                var obj = __recognizer499507596.logProbe([
+                var obj = __recognizer557738096.logProbe([
                         67,
                         3,
                         67,
                         10
-                    ], console), fn = __recognizer499507596.logProbe([
+                    ], console), fn = __recognizer557738096.logProbe([
                         67,
                         11,
                         67,
@@ -513,52 +513,52 @@ var DinnerModel = function () {
             }.bind(this)('The Menu is empty!'));
         } else {
             this.totalMenuPrice = 0;
-            for (var i = 0; __recognizer499507596.logProbe([
+            for (var i = 0; __recognizer557738096.logProbe([
                     73,
                     19,
                     73,
                     20
-                ], i) < __recognizer499507596.logProbe([
+                ], i) < __recognizer557738096.logProbe([
                     73,
                     48,
                     73,
                     54
                 ], function () {
-                    var obj = __recognizer499507596.logProbe([
+                    var obj = __recognizer557738096.logProbe([
                             73,
                             23,
                             73,
                             27
-                        ], this), fn = __recognizer499507596.logProbe([
+                        ], this), fn = __recognizer557738096.logProbe([
                             73,
                             28,
                             73,
                             45
                         ], obj.getAllIngredients);
                     return fn.apply(obj, arguments);
-                }.bind(this)().length); __recognizer499507596.logProbe([
+                }.bind(this)().length); __recognizer557738096.logProbe([
                     73,
                     56,
                     73,
                     57
                 ], i)++) {
-                this.totalMenuPrice += __recognizer499507596.logProbe([
+                this.totalMenuPrice += __recognizer557738096.logProbe([
                     74,
                     56,
                     74,
                     61
-                ], __recognizer499507596.logProbe([
+                ], __recognizer557738096.logProbe([
                     74,
                     53,
                     74,
                     54
                 ], function () {
-                    var obj = __recognizer499507596.logProbe([
+                    var obj = __recognizer557738096.logProbe([
                             74,
                             28,
                             74,
                             32
-                        ], this), fn = __recognizer499507596.logProbe([
+                        ], this), fn = __recognizer557738096.logProbe([
                             74,
                             33,
                             74,
@@ -568,12 +568,12 @@ var DinnerModel = function () {
                 }.bind(this)()[i]).price);
             }
             ;
-            return __recognizer499507596.logProbe([
+            return __recognizer557738096.logProbe([
                 76,
                 15,
                 76,
                 29
-            ], __recognizer499507596.logProbe([
+            ], __recognizer557738096.logProbe([
                 76,
                 10,
                 76,
@@ -582,24 +582,24 @@ var DinnerModel = function () {
         }
     };
     this.addDishToMenu = function (id) {
-        __recognizer499507596.logEntry([
+        __recognizer557738096.logEntry([
             82,
             22,
             82,
             30
         ], arguments);
         (function () {
-            var obj = __recognizer499507596.logProbe([
+            var obj = __recognizer557738096.logProbe([
                     83,
                     7,
                     83,
                     11
-                ], __recognizer499507596.logProbe([
+                ], __recognizer557738096.logProbe([
                     83,
                     2,
                     83,
                     6
-                ], this).menu), fn = __recognizer499507596.logProbe([
+                ], this).menu), fn = __recognizer557738096.logProbe([
                     83,
                     12,
                     83,
@@ -607,19 +607,19 @@ var DinnerModel = function () {
                 ], obj.push);
             return fn.apply(obj, arguments);
         }.bind(this)(function () {
-            var obj = __recognizer499507596.logProbe([
+            var obj = __recognizer557738096.logProbe([
                     83,
                     17,
                     83,
                     21
-                ], this), fn = __recognizer499507596.logProbe([
+                ], this), fn = __recognizer557738096.logProbe([
                     83,
                     22,
                     83,
                     29
                 ], obj.getDish);
             return fn.apply(obj, arguments);
-        }.bind(this)(__recognizer499507596.logProbe([
+        }.bind(this)(__recognizer557738096.logProbe([
             83,
             30,
             83,
@@ -627,35 +627,35 @@ var DinnerModel = function () {
         ], id))));
     };
     this.removeDishFromMenu = function (id) {
-        __recognizer499507596.logEntry([
+        __recognizer557738096.logEntry([
             87,
             27,
             87,
             35
         ], arguments);
-        if (__recognizer499507596.logProbe([
+        if (__recognizer557738096.logProbe([
                 88,
                 15,
                 88,
                 21
-            ], __recognizer499507596.logProbe([
+            ], __recognizer557738096.logProbe([
                 88,
                 10,
                 88,
                 14
-            ], __recognizer499507596.logProbe([
+            ], __recognizer557738096.logProbe([
                 88,
                 5,
                 88,
                 9
             ], this).menu).length) === 0) {
             (function () {
-                var obj = __recognizer499507596.logProbe([
+                var obj = __recognizer557738096.logProbe([
                         91,
                         3,
                         91,
                         10
-                    ], console), fn = __recognizer499507596.logProbe([
+                    ], console), fn = __recognizer557738096.logProbe([
                         91,
                         11,
                         91,
@@ -664,77 +664,77 @@ var DinnerModel = function () {
                 return fn.apply(obj, arguments);
             }.bind(this)('The Menu is empty!'));
         } else {
-            for (var i = 0; __recognizer499507596.logProbe([
+            for (var i = 0; __recognizer557738096.logProbe([
                     95,
                     19,
                     95,
                     20
-                ], i) < __recognizer499507596.logProbe([
+                ], i) < __recognizer557738096.logProbe([
                     95,
                     33,
                     95,
                     39
-                ], __recognizer499507596.logProbe([
+                ], __recognizer557738096.logProbe([
                     95,
                     28,
                     95,
                     32
-                ], __recognizer499507596.logProbe([
+                ], __recognizer557738096.logProbe([
                     95,
                     23,
                     95,
                     27
-                ], this).menu).length); __recognizer499507596.logProbe([
+                ], this).menu).length); __recognizer557738096.logProbe([
                     95,
                     41,
                     95,
                     42
                 ], i)++) {
-                if (__recognizer499507596.logProbe([
+                if (__recognizer557738096.logProbe([
                         96,
                         20,
                         96,
                         22
-                    ], __recognizer499507596.logProbe([
+                    ], __recognizer557738096.logProbe([
                         96,
                         17,
                         96,
                         18
-                    ], __recognizer499507596.logProbe([
+                    ], __recognizer557738096.logProbe([
                         96,
                         12,
                         96,
                         16
-                    ], __recognizer499507596.logProbe([
+                    ], __recognizer557738096.logProbe([
                         96,
                         7,
                         96,
                         11
-                    ], this).menu)[i]).id) === __recognizer499507596.logProbe([
+                    ], this).menu)[i]).id) === __recognizer557738096.logProbe([
                         96,
                         27,
                         96,
                         29
                     ], id)) {
                     (function () {
-                        var obj = __recognizer499507596.logProbe([
+                        var obj = __recognizer557738096.logProbe([
                                 98,
                                 10,
                                 98,
                                 14
-                            ], __recognizer499507596.logProbe([
+                            ], __recognizer557738096.logProbe([
                                 98,
                                 5,
                                 98,
                                 9
-                            ], this).menu), fn = __recognizer499507596.logProbe([
+                            ], this).menu), fn = __recognizer557738096.logProbe([
                                 98,
                                 15,
                                 98,
                                 21
                             ], obj.splice);
                         return fn.apply(obj, arguments);
-                    }.bind(this)(__recognizer499507596.logProbe([
+                    }.bind(this)(__recognizer557738096.logProbe([
                         98,
                         22,
                         98,
@@ -746,29 +746,29 @@ var DinnerModel = function () {
         }
     };
     this.getAllDishes = function (type, filter) {
-        __recognizer499507596.logEntry([
+        __recognizer557738096.logEntry([
             107,
             21,
             107,
             29
         ], arguments);
         return function () {
-            var obj = __recognizer499507596.logProbe([
+            var obj = __recognizer557738096.logProbe([
                     108,
                     10,
                     108,
                     19
-                ], __recognizer499507596.logProbe([
+                ], __recognizer557738096.logProbe([
                     108,
                     10,
                     108,
                     11
-                ], $)(__recognizer499507596.logProbe([
+                ], $)(__recognizer557738096.logProbe([
                     108,
                     12,
                     108,
                     18
-                ], dishes))), fn = __recognizer499507596.logProbe([
+                ], dishes))), fn = __recognizer557738096.logProbe([
                     108,
                     20,
                     108,
@@ -776,14 +776,14 @@ var DinnerModel = function () {
                 ], obj.filter);
             return fn.apply(obj, arguments);
         }.bind(this)(function (index, dish) {
-            __recognizer499507596.logEntry([
+            __recognizer557738096.logEntry([
                 108,
                 27,
                 108,
                 35
             ], arguments);
             var found = true;
-            if (__recognizer499507596.logProbe([
+            if (__recognizer557738096.logProbe([
                     110,
                     5,
                     110,
@@ -791,54 +791,54 @@ var DinnerModel = function () {
                 ], filter)) {
                 found = false;
                 (function () {
-                    var obj = __recognizer499507596.logProbe([
+                    var obj = __recognizer557738096.logProbe([
                             112,
                             3,
                             112,
                             4
-                        ], $), fn = __recognizer499507596.logProbe([
+                        ], $), fn = __recognizer557738096.logProbe([
                             112,
                             5,
                             112,
                             9
                         ], obj.each);
                     return fn.apply(obj, arguments);
-                }.bind(this)(__recognizer499507596.logProbe([
+                }.bind(this)(__recognizer557738096.logProbe([
                     112,
                     15,
                     112,
                     26
-                ], __recognizer499507596.logProbe([
+                ], __recognizer557738096.logProbe([
                     112,
                     10,
                     112,
                     14
                 ], dish).ingredients), function (index, ingredient) {
-                    __recognizer499507596.logEntry([
+                    __recognizer557738096.logEntry([
                         112,
                         27,
                         112,
                         35
                     ], arguments);
                     if (function () {
-                            var obj = __recognizer499507596.logProbe([
+                            var obj = __recognizer557738096.logProbe([
                                     113,
                                     18,
                                     113,
                                     22
-                                ], __recognizer499507596.logProbe([
+                                ], __recognizer557738096.logProbe([
                                     113,
                                     7,
                                     113,
                                     17
-                                ], ingredient).name), fn = __recognizer499507596.logProbe([
+                                ], ingredient).name), fn = __recognizer557738096.logProbe([
                                     113,
                                     23,
                                     113,
                                     30
                                 ], obj.indexOf);
                             return fn.apply(obj, arguments);
-                        }.bind(this)(__recognizer499507596.logProbe([
+                        }.bind(this)(__recognizer557738096.logProbe([
                             113,
                             31,
                             113,
@@ -848,24 +848,24 @@ var DinnerModel = function () {
                     }
                 }));
                 if (function () {
-                        var obj = __recognizer499507596.logProbe([
+                        var obj = __recognizer557738096.logProbe([
                                 117,
                                 11,
                                 117,
                                 15
-                            ], __recognizer499507596.logProbe([
+                            ], __recognizer557738096.logProbe([
                                 117,
                                 6,
                                 117,
                                 10
-                            ], dish).name), fn = __recognizer499507596.logProbe([
+                            ], dish).name), fn = __recognizer557738096.logProbe([
                                 117,
                                 16,
                                 117,
                                 23
                             ], obj.indexOf);
                         return fn.apply(obj, arguments);
-                    }.bind(this)(__recognizer499507596.logProbe([
+                    }.bind(this)(__recognizer557738096.logProbe([
                         117,
                         24,
                         117,
@@ -874,22 +874,22 @@ var DinnerModel = function () {
                     found = true;
                 }
             }
-            return __recognizer499507596.logProbe([
+            return __recognizer557738096.logProbe([
                 122,
                 16,
                 122,
                 20
-            ], __recognizer499507596.logProbe([
+            ], __recognizer557738096.logProbe([
                 122,
                 11,
                 122,
                 15
-            ], dish).type) == __recognizer499507596.logProbe([
+            ], dish).type) == __recognizer557738096.logProbe([
                 122,
                 24,
                 122,
                 28
-            ], type) && __recognizer499507596.logProbe([
+            ], type) && __recognizer557738096.logProbe([
                 122,
                 32,
                 122,
@@ -898,45 +898,45 @@ var DinnerModel = function () {
         });
     };
     this.getDish = function (id) {
-        __recognizer499507596.logEntry([
+        __recognizer557738096.logEntry([
             127,
             16,
             127,
             24
         ], arguments);
-        for (key in __recognizer499507596.logProbe([
+        for (key in __recognizer557738096.logProbe([
                 128,
                 14,
                 128,
                 20
             ], dishes)) {
-            if (__recognizer499507596.logProbe([
+            if (__recognizer557738096.logProbe([
                     129,
                     18,
                     129,
                     20
-                ], __recognizer499507596.logProbe([
+                ], __recognizer557738096.logProbe([
                     129,
                     13,
                     129,
                     16
-                ], __recognizer499507596.logProbe([
+                ], __recognizer557738096.logProbe([
                     129,
                     6,
                     129,
                     12
-                ], dishes)[key]).id) == __recognizer499507596.logProbe([
+                ], dishes)[key]).id) == __recognizer557738096.logProbe([
                     129,
                     24,
                     129,
                     26
                 ], id)) {
-                return __recognizer499507596.logProbe([
+                return __recognizer557738096.logProbe([
                     130,
                     18,
                     130,
                     21
-                ], __recognizer499507596.logProbe([
+                ], __recognizer557738096.logProbe([
                     130,
                     11,
                     130,
