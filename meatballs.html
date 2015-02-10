@@ -91,47 +91,94 @@
 
 
 			<div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
-				<div id="selectDish">
-					<h1 class="">Select A Dish</h1>
-					<div class="row placeholders">
-						<div class="col-xs-24 col-sm-12 placeholder">
-							<div class="panel panel-default">
+				<div id="selectedDish">
+
+					<div class="row">
+
+						<div class="col-xs-12 col-md-6">
+														<div class="">
+								<button type="button" class="btn btn-warning btn-lg">
+									<span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span> Back to select dishes
+								</button>
+							</div>
+							<h1>Meatballs</h1>
+							<a href="#" class="thumbnail">
+								<img src="/images/meatballs.jpg">
+							</a>
+							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin consectetur nunc vel urna ornare, sed feugiat enim ultrices. Proin quis nulla turpis. Vivamus convallis quam quis sodales venenatis. Donec pharetra nunc non blandit lobortis. Cras purus libero, feugiat et tempus ac, hendrerit ac ex.</p>
+
+
+
+							<h1>Preparation</h1>
+							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin consectetur nunc vel urna ornare, sed feugiat enim ultrices. Proin quis nulla turpis. Vivamus convallis quam quis sodales venenatis. Donec pharetra nunc non blandit lobortis. Cras purus libero, feugiat et tempus ac, hendrerit ac ex.</p>
+						</div>
+
+						<div class="col-xs-12 col-md-6">
+							<div class="panel panel-warning">
+								<div class="panel-heading">
+									<h3 class="panel-title">Ingredients for <span id="numberOfGuests">Number</span> People</h3>
+								</div>
 								<div class="panel-body">
-									<form class="navbar-form navbar-left" role="search">
-										<div class="input-group">
-											<input type="text" class="form-control" id="searchBarInputText" placeholder="Enter Keywords">
-											<span class="input-group-btn">
-											<button type="submit" class="btn btn-primary" id="searchBarButton">Search</button>
-											</span>
-										</div>
-									</form>
-									<form class="navbar-form navbar-left" role="select">
-										<select id="courses" class="form-control">
-											<option>Main Course</option>
-											<option>Starter</option>
-											<option>Desert</option>
-										</select>
-									</form>
+									<div class="panel panel-warning">
+										<!-- Table -->
+										<table class="table">
+											<tr>
+												<td>quantity</td>
+												<td>unit</td>
+												<td style="width:100%">ingredient</td>
+												<td>SEK</td>
+												<td>price</td>
+											</tr>
+											<tr>
+												<td>quantity</td>
+												<td>unit</td>
+												<td style="width:100%">ingredient</td>
+												<td>SEK</td>
+												<td>price</td>
+											</tr>
+											<tr>
+												<td>quantity</td>
+												<td>unit</td>
+												<td style="width:100%">ingredient</td>
+												<td>SEK</td>
+												<td>price</td>
+											</tr>
+											<tr>
+												<td>quantity</td>
+												<td>unit</td>
+												<td style="width:100%">ingredient</td>
+												<td>SEK</td>
+												<td>price</td>
+											</tr>
+											<tr>
+												<td>quantity</td>
+												<td>unit</td>
+												<td style="width:100%">ingredient</td>
+												<td>SEK</td>
+												<td>price</td>
+											</tr>
+											<tr>
+												<td>
+
+												</td>
+												<td></td>
+												<td style="width:100%"></td>
+												<td style="font-weight: bold; vertical-align: middle;">SEK</td>
+												<td style="font-weight: bold; vertical-align: middle;">price</td>
+											</tr>
+										</table>
+
+									</div>
+									<div class="">
+										<button type="button" class="btn btn-success btn-lg pull-right">
+											<span class="glyphicon glyphicon glyphicon-ok" aria-hidden="true"></span> Confirm dish
+										</button>
+									</div>
 								</div>
 
-								<!--
-								<form class="form-inline">				
-									<div class="form-group">						
-										<input id="searchBarInputText" type="text" class="form-control" id="" placeholder="Enter Keywords">
-									</div>
-									<button href="#" id="searchBarButton" class="btn btn-primary" role="button">Search</button>
-								</form>
--->
 							</div>
-						</div>
-					</div>
-					<div style="overflow-y: scroll; overflow-x: hidden;">
-
-						<!--Loop for the rest of the dishes-->
-						<div id="dishes" class="row placeholders" style="text-align: center; padding-top: 50px">
 
 						</div>
-						<!--Loop for the rest of the dishes-->
 					</div>
 				</div>
 			</div>
