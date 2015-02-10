@@ -32,11 +32,11 @@
 						<table class="table" style="margin-bottom: 0px">
 							<tr>
 								<td style="border-top: none; padding-left: 20px;">
-									<input type="text" class="form-control" id="" placeholder="Number Of People" disabled>
+									<input type="text" class="form-control" id="numberOfGuests" placeholder="Number Of People"disabled>
 								</td>
 								<td style="border-top: none; text-align: right; padding-right: 20px;">										
-									<a href="#" class="glyphicon glyphicon-plus" style="text-decoration: none; padding-left: 70px"></a>
-									<a href="#" class="glyphicon glyphicon-minus" style="text-decoration: none"></a>									
+									<a href="#" id="plusGuest" class="glyphicon glyphicon-plus" style="text-decoration: none; padding-left: 70px"></a>
+									<a href="#" id="minusGuest" class="glyphicon glyphicon-minus" style="text-decoration: none"></a>									
 								</td>
 							</tr>
 						</table>
@@ -67,7 +67,7 @@
 						<table class="table">
 							<tr>
 								<td style="border-top: none"></td>
-								<td style="border-top: none; text-align: right; padding-right: 20px;"><h5>SEK 0.0</h5></td>
+								<td style="border-top: none; text-align: right; padding-right: 20px;"><h5>SEK 0.0 :-</h5></td>
 							</tr>
 						</table>	          		
 					</ul>
@@ -78,45 +78,41 @@
 
 
 				<div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main" style="padding-top: 120px;">
-
-					<h1 class="page-header">Select A Dish</h1>
-
-					<div class="row placeholders">
-						<div class="col-xs-6 col-sm-3 placeholder">
-
-							<form class="form-inline">				
-								<div class="form-group">						
-									<input type="text" class="form-control" id="" placeholder="Enter Keywords">
-								</div>
-								<a href="#" class="btn btn-primary" role="button">Search</a>
-							</form>
-
-						</div>
-
-						<div class="col-xs-6 col-sm-3 placeholder">
-
-							<select class="form-control" style="width: 50%">
-								<option>Main Course</option>
-								<option>Starter</option>
-								<option>Desert</option>																
-							</select>
-						</div>
-					</div>
-
-					<hr>
-					<div style="overflow-y: scroll; overflow-x: hidden;">
-
-						<!--Loop for the rest of the dishes-->
-						<div class="row placeholders" style="text-align: center; padding-top: 50px">
+					<div id="selectDish">						
+						<h1 class="page-header">Select A Dish</h1>
+						<div class="row placeholders">
 							<div class="col-xs-6 col-sm-3 placeholder">
-								<img src="images/greekSalad.jpg" alt="..." class="img-thumbnail" style="max-height:200px; max-width:200px;">
-								<h4>Dish Name</h4>
-								<span class="text-muted">Description</span>
+
+								<form class="form-inline">				
+									<div class="form-group">						
+										<input id="searchBarInputText" type="text" class="form-control" id="" placeholder="Enter Keywords">
+									</div>
+									<a href="#" id="searchBarButton" class="btn btn-primary" role="button">Search</a>
+								</form>
+
+							</div>
+
+							<div class="col-xs-6 col-sm-3 placeholder">
+
+								<select id="courses" class="form-control" style="width: 50%">
+									<option>Main Course</option>
+									<option>Starter</option>
+									<option>Desert</option>																
+								</select>
 							</div>
 						</div>
-						<!--Loop for the rest of the dishes-->
-					</div>
-				</div>				
+
+						<hr>
+						<div style="overflow-y: scroll; overflow-x: hidden;">
+
+							<!--Loop for the rest of the dishes-->
+							<div id="dishes" class="row placeholders" style="text-align: center; padding-top: 50px">
+								
+							</div>
+							<!--Loop for the rest of the dishes-->
+						</div>
+					</div>	
+				</div>			
 			</div>
 		</div>
 
