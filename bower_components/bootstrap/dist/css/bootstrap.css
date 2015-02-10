@@ -6570,12 +6570,18 @@ button.close {
 }
 .thumbnail {
   background-color: rgba(255, 255, 255, .8);
-  border-radius: 0;
+}
+.thumbnail .caption {
+  padding: 20px;
 }
 .navbar {
-  background-color: rgba(255, 226, 0, .7);
+  background-color: #ffe200;
 }
 .navbar-brand {
+  padding-top: 25px;
+  padding-right: 50px;
+  padding-bottom: 50px;
+  padding-left: 15px;
   color: #636363;
 }
 /* Move down content because we have a fixed navbar that is 50px tall */
@@ -6599,7 +6605,7 @@ button.close {
 @media (min-width: 768px) {
   .sidebar {
     position: fixed;
-    top: 102px;
+    top: 100px;
     bottom: 0;
     left: 0;
     z-index: 1000;
