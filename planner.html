@@ -28,14 +28,26 @@
 				<div id="dinnerView">
 					<ul class="nav nav-sidebar">
 						<li class="active"><h2 style="padding-left: 20px">My Dinner</h2></li>
-						<li><a href="#">People <input type="number" id="numberOfGuests"></a></li>
+						<br/>				
+						<table class="table" style="margin-bottom: 0px">
+							<tr>
+								<td style="border-top: none; padding-left: 20px;">
+									<input type="text" class="form-control" id="" placeholder="Number Of People" disabled>
+								</td>
+								<td style="border-top: none; text-align: right; padding-right: 20px;">										
+									<a href="#" class="glyphicon glyphicon-plus" style="text-decoration: none; padding-left: 70px"></a>
+									<a href="#" class="glyphicon glyphicon-minus" style="text-decoration: none"></a>									
+								</td>
+							</tr>
+						</table>
+
 					</ul>
 					<ul class="nav nav-sidebar">
 
 						<table class="table" style="margin-bottom: 0px">
 							<tr>
-								<td style="border-bottom: 1px solid #ddd"><h5>Dish Name</h5></td>
-								<td style="border-bottom: 1px solid #ddd; text-align: right; padding-right: 10px;"><h5>Cost</h5></td>
+								<td style="border-bottom: 1px solid #ddd; padding-left: 20px;"><h5>Dish Name</h5></td>
+								<td style="border-bottom: 1px solid #ddd; text-align: right; padding-right: 20px;"><h5>Cost</h5></td>
 							</tr>
 						</table>	          		
 					</ul>
@@ -43,8 +55,8 @@
 					<ul class="nav nav-sidebar" style="margin-bottom: 0px">
 						<table class="table">
 							<tr>
-								<td style="border-top: none"><h5>Pending</h5></td>
-								<td style="border-top: none; text-align: right; padding-right: 10px;"><h5>0.0</h5></td>
+								<td style="border-top: none; padding-left: 20px;"><h5>Pending</h5></td>
+								<td style="border-top: none; text-align: right; padding-right: 20px;"><h5>0.0</h5></td>
 							</tr>
 						</table>	          		
 					</ul>
@@ -55,7 +67,7 @@
 						<table class="table">
 							<tr>
 								<td style="border-top: none"></td>
-								<td style="border-top: none; text-align: right; padding-right: 10px;"><h5>SEK 0.0</h5></td>
+								<td style="border-top: none; text-align: right; padding-right: 20px;"><h5>SEK 0.0</h5></td>
 							</tr>
 						</table>	          		
 					</ul>
@@ -63,33 +75,38 @@
 					<p style="text-align: center"><a href="#" class="btn btn-primary" role="button">Confirm Dinner</a>
 					</div>
 				</div>				
-					<div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main" style="padding-top: 120px">
-						<h1 class="page-header">Select A Dish</h1>
 
-						<div class="row placeholders">
-							<div class="col-xs-6 col-sm-3 placeholder">
 
-								<form class="form-inline">				
-									<div class="form-group">						
-										<input type="text" class="form-control" id="" placeholder="Enter Keywords">
-									</div>
-									<a href="#" class="btn btn-primary" role="button">Search</a>
-								</form>
+				<div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main" style="padding-top: 120px;">
 
-							</div>
+					<h1 class="page-header">Select A Dish</h1>
 
-							<div class="col-xs-6 col-sm-3 placeholder">
+					<div class="row placeholders">
+						<div class="col-xs-6 col-sm-3 placeholder">
 
-								<select class="form-control" style="width: 50%">
-									<option>Main Course</option>
-									<option>Starter</option>
-									<option>Desert</option>																
-								</select>
-							</div>
+							<form class="form-inline">				
+								<div class="form-group">						
+									<input type="text" class="form-control" id="" placeholder="Enter Keywords">
+								</div>
+								<a href="#" class="btn btn-primary" role="button">Search</a>
+							</form>
+
 						</div>
 
-						<hr>
+						<div class="col-xs-6 col-sm-3 placeholder">
 
+							<select class="form-control" style="width: 50%">
+								<option>Main Course</option>
+								<option>Starter</option>
+								<option>Desert</option>																
+							</select>
+						</div>
+					</div>
+
+					<hr>
+					<div style="overflow-y: scroll; overflow-x: hidden;">
+
+						<!--Loop for the rest of the dishes-->
 						<div class="row placeholders" style="text-align: center; padding-top: 50px">
 							<div class="col-xs-6 col-sm-3 placeholder">
 								<img src="images/greekSalad.jpg" alt="..." class="img-thumbnail" style="max-height:200px; max-width:200px;">
@@ -97,7 +114,9 @@
 								<span class="text-muted">Description</span>
 							</div>
 						</div>
-					</div>				
+						<!--Loop for the rest of the dishes-->
+					</div>
+				</div>				
 			</div>
 		</div>
 
