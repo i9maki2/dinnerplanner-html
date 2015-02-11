@@ -6576,6 +6576,18 @@ button.close {
 .thumbnail .caption {
   padding: 20px;
 }
+.img-thumbnail {
+  padding: 0px;
+  background-color: #fff;
+  border: 0px solid #ddd;
+  border-radius: 50%;
+}
+.thumbnail {
+  padding: 0px;
+  margin-bottom: 20px;
+  background-color: #fff;
+  border: 0px solid #ddd;
+}
 .panel-warning {
   background-color: #FFF28E;
 }
@@ -6590,6 +6602,8 @@ button.close {
 }
 .navbar {
   background-color: #ffe200;
+  -webkit-box-shadow: 0px 5px 10px rgba(103, 103, 103, 0.44);
+          box-shadow: 0px 5px 10px rgba(103, 103, 103, 0.44);
 }
 .navbar-brand {
   font-family: 'leckerlioneregular';
