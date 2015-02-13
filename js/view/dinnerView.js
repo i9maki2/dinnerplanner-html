@@ -42,7 +42,7 @@ var DinnerView = function (model, elements) {
 		+ dish[i].name +'</h4><span class="text-muted" style="font-size: 14px">'
 		+ dish[i].description +'</span></div>';
 
-		this.dishes.append(html);
+		this.dishes.prepend(html);
 	};
 
 	//END OF Planner.html---------------------------------------------
