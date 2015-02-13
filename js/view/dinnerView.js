@@ -12,7 +12,7 @@ var DinnerView = function (model, elements) {
 	//----------------------------------------------------------------
 	//Number Of Guests
 	this.numberOfGuests = $("#numberOfGuests");
-	this.numberOfGuests.val(this._model.numberOfGuests);
+	//this.numberOfGuests.val(this._model.numberOfGuests);
 
 	//Plus Minus Buttons
 	this.plusButton = $("#plusGuest");
