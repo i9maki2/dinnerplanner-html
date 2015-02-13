@@ -34,17 +34,17 @@
 									<input type="text" class="form-control" id="numberOfGuests" placeholder="Number Of People" disabled>
 								</td>
 								<div class="btn-group-vertical" role="group" aria-label="...">
-<!--
+									<!--
   <div class="btn-group-vertical" role="group" aria-label="...">
   <button type="button" class="btn btn-default">1</button>
   <button type="button" class="btn btn-default">2</button>
 </div>
 -->
 
-								<td style="border-top: none; text-align: right; padding-right: 20px;">
-									<a href="#" id="plusGuest" class="glyphicon glyphicon-plus" style="text-decoration: none; padding-left: 70px"></a>
-									<a href="#" id="minusGuest" class="glyphicon glyphicon-minus" style="text-decoration: none"></a>
-								</td>
+									<td style="border-top: none; text-align: right; padding-right: 20px;">
+										<a href="#" id="plusGuest" class="glyphicon glyphicon-plus" style="text-decoration: none; padding-left: 70px"></a>
+										<a href="#" id="minusGuest" class="glyphicon glyphicon-minus" style="text-decoration: none"></a>
+									</td>
 							</tr>
 						</table>
 
@@ -90,62 +90,62 @@
 					</ul>
 
 					<p style="text-align: center"><a href="#" class="btn btn-warning" role="button">Confirm Dinner</a>
+						</div>
 				</div>
-			</div>
 
 
-			<div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
-				<div id="selectDish">
-					<h1 class="">Select A Dish</h1>
-					<div class="row placeholders">
-						<div class="col-xs-24 col-sm-12 placeholder">
-							<div class="panel panel-warning">
-								<div class="panel-body">
-									<form class="navbar-form navbar-left" role="search">
-										<div class="input-group">
-											<input type="text" class="form-control" id="searchBarInputText" placeholder="Enter Keywords">
-											<span class="input-group-btn">
+				<div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+					<div id="selectDish">
+						<h1 class="">Select A Dish</h1>
+						<div class="row placeholders">
+							<div class="col-xs-24 col-sm-12 placeholder">
+								<div class="panel panel-warning">
+									<div class="panel-body">
+										<form class="navbar-form navbar-left" role="select">
+											<select id="courses" class="form-control">
+												<option>Main Course</option>
+												<option>Starter</option>
+												<option>Desert</option>
+											</select>
+										</form>
+										<form class="navbar-form navbar-left" role="search">
+											<div class="input-group">
+												<input type="text" class="form-control" id="searchBarInputText" placeholder="Enter Keywords">
+												<span class="input-group-btn">
 											<button type="submit" class="btn btn-warning" id="searchBarButton">Search</button>
 											</span>
-										</div>
-									</form>
-									<form class="navbar-form navbar-left" role="select">
-										<select id="courses" class="form-control">
-											<option>Main Course</option>
-											<option>Starter</option>
-											<option>Desert</option>
-										</select>
-									</form>
+											</div>
+										</form>
+									</div>
 								</div>
 							</div>
 						</div>
-					</div>
-					<div style="overflow-y: scroll; overflow-x: hidden;">
+						<div style="overflow-y: scroll; overflow-x: hidden;">
 
-						<!--Loop for the rest of the dishes-->
-						<div id="dishes" class="row placeholders" style="text-align: center; padding-top: 50px">
+							<!--Loop for the rest of the dishes-->
+							<div id="dishes" class="row placeholders" style="text-align: center; padding-top: 50px">
 
+							</div>
+							<!--Loop for the rest of the dishes-->
 						</div>
-						<!--Loop for the rest of the dishes-->
 					</div>
 				</div>
 			</div>
 		</div>
-	</div>
 
-	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-	<!-- Include all compiled plugins (below), or include individual files as needed -->
-	<script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
-	<!-- Bootstrap -->
-	<link href="bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+		<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+		<!-- Include all compiled plugins (below), or include individual files as needed -->
+		<script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+		<!-- Bootstrap -->
+		<link href="bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
 
-	<!-- The application JavaScript code -->
-	<script src="js/app.js"></script>
-	<script src="js/observer.js"></script>
-	<script src="js/model/dinnerModel.js"></script>
-	<script src="js/view/dinnerView.js"></script>
-	<script src="js/control/dinnerControl.js"></script>
+		<!-- The application JavaScript code -->
+		<script src="js/app.js"></script>
+		<script src="js/observer.js"></script>
+		<script src="js/model/dinnerModel.js"></script>
+		<script src="js/view/dinnerView.js"></script>
+		<script src="js/control/dinnerControl.js"></script>
 
 </body>
 
