@@ -6560,8 +6560,8 @@ button.close {
 }
 @font-face {
   font-family: 'leckerlioneregular';
-  src: url('/webfont/leckerlione-regular-webfont.eot');
-  src: url('/webfont/leckerlione-regular-webfont.eot?#iefix') format('embedded-opentype'), url('/webfont/leckerlione-regular-webfont.woff2') format('woff2'), url('/webfont/leckerlione-regular-webfont.woff') format('woff'), url('/webfont/leckerlione-regular-webfont.ttf') format('truetype'), url('/webfont/leckerlione-regular-webfont.svg#leckerlioneregular') format('svg');
+  src: url('../fonts/leckerlione-regular-webfont.eot');
+  src: url('../fonts/leckerlione-regular-webfont.eot?#iefix') format('embedded-opentype'), url('../fonts/leckerlione-regular-webfont.woff2') format('woff2'), url('../fonts/leckerlione-regular-webfont.woff') format('woff'), url('../fonts/leckerlione-regular-webfont.ttf') format('truetype'), url('../fonts/leckerlione-regular-webfont.svg#leckerlioneregular') format('svg');
   font-weight: normal;
   font-style: normal;
 }
