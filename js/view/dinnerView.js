@@ -3,9 +3,6 @@ var DinnerView = function (model, elements) {
 
 	this._model = model;
 	this._elements = elements;
-	
-	// Get all the relevant elements of the view (ones that show data
-  	// and/or ones that responed to interaction)
 
 	//Planner.html----------------------------------------------------
 	//----------------------------------------------------------------
@@ -49,6 +46,9 @@ var DinnerView = function (model, elements) {
 	};
 
 	//END OF Planner.html---------------------------------------------
+
+
+
 
 			
 }
