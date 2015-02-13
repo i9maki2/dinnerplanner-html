@@ -31,9 +31,9 @@ var DinnerView = function (model, elements) {
 
 	//Dishes (traversing Array to show each dish from the specific course)
 	//In this case it will show only main dish)
-	this.dishes = this._elements.selectDish.find("#dishes");
+	this.dishes = this._elements.selectDish.find("#dishes");	
 
-	var dish = this._model.getAllDishes("main dish", "");
+	var dish = this._model.getAllDishes("starter", "");
 
 	for (var i = 0; i < dish.length; i++) {		
 
@@ -47,7 +47,27 @@ var DinnerView = function (model, elements) {
 
 	//END OF Planner.html---------------------------------------------
 
+	//Recipe.html-----------------------------------------------------
+	//----------------------------------------------------------------
 
+	//Ingredients
+
+	this.ingredients = this._elements.ingredients.find("#ingr");
+
+	var dishForIngredients = this._model.getDish(1);	
+
+	for (var i = 0; i < dishForIngredients.ingredients.length; i++) {
+		
+		var html1 = '<tr><td>'
+		+ dishForIngredients.ingredients[i].quantity + dishForIngredients.ingredients[i].unit +'</td><td>'		
+		+ dishForIngredients.ingredients[i].name + '</td><td>SEK</td><td>'
+		+ dishForIngredients.ingredients[i].price + ' :-</td></tr>';
+
+		this.ingredients.append(html1);
+	};
+
+
+	//END OF Recipe.html---------------------------------------------
 
 
 			
