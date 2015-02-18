@@ -18,7 +18,7 @@ var SelectorView = function(model, elements)
 	//In this case it will show only main dish)
 	this.dishes = this._elements.selectDish.find("#dishes");	
 
-	var dish = this._model.getAllDishes("starter", "");
+		var dish = this._model.getAllDishes("main dish", "");
 
 	for (var i = 0; i < dish.length; i++) {		
 
