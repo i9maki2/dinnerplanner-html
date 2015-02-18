@@ -9,5 +9,5 @@ $(function() {
         menuView = new MenuView(model, {'menu': $('#menu')}),
         printView = new PrintView(model, {'print': $('#print')}),
 
-        controller = new DinnerController(model, view);
+        controller = new DinnerController(model, selectorView);
 });
