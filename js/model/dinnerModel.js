@@ -1,18 +1,34 @@
 //DinnerModel Object constructor
 var DinnerModel = function() {
- 
+
 	//TODO Lab 2 implement the data structure that will hold number of guest
 	// and selected dinner options for dinner menu
-	this.numberOfGuests = 4;
+	this.numberOfGuests = 0;
 	this.selectedDish;
 	this.numberOfGuests;	
 	this.ingredients;
 	this.totalMenuPrice;
 	this.menu = [];
 
+	//Observable
+	this.guestAdded = new Event(this);
+	this.guestRemoved = new Event(this);
 
 	this.setNumberOfGuests = function(num) {
+		var added = true;
+		if(this.numberOfGuests > num){
+			added = false;
+		}
 		this.numberOfGuests = num;
+
+		if(added === true){			
+			this.guestAdded.notify({
+				num: num});	
+		}
+		else{			
+			this.guestRemoved.notify({
+				num: num});	
+		}	
 	}
 
 	// should return 
@@ -54,7 +70,7 @@ var DinnerModel = function() {
 				};	
 			};
 
-		return this.ingredients;
+			return this.ingredients;
 		}
 	}
 
@@ -71,7 +87,7 @@ var DinnerModel = function() {
 			this.totalMenuPrice = 0;
 
 			for (var i = 0; i < this.getAllIngredients().length; i++) {				
-					this.totalMenuPrice += this.getAllIngredients()[i].price;				
+				this.totalMenuPrice += this.getAllIngredients()[i].price;				
 			};
 			return this.totalMenuPrice;
 		}
@@ -110,27 +126,27 @@ var DinnerModel = function() {
 	//you can use the filter argument to filter out the dish by name or ingredient (use for search)
 	//if you don't pass any filter all the dishes will be returned
 	this.getAllDishes = function (type,filter) {
-	  return $(dishes).filter(function(index,dish) {
-		var found = true;
-		if(filter){
-			found = false;
-			$.each(dish.ingredients,function(index,ingredient) {
-				if(ingredient.name.indexOf(filter)!=-1) {
+		return $(dishes).filter(function(index,dish) {
+			var found = true;
+			if(filter){
+				found = false;
+				$.each(dish.ingredients,function(index,ingredient) {
+					if(ingredient.name.indexOf(filter)!=-1) {
+						found = true;
+					}
+				});
+				if(dish.name.indexOf(filter) != -1)
+				{
 					found = true;
 				}
-			});
-			if(dish.name.indexOf(filter) != -1)
-			{
-				found = true;
 			}
-		}
-	  	return dish.type == type && found;
-	  });	
+			return dish.type == type && found;
+		});	
 	}
 
 	//function that returns a dish of specific ID
 	this.getDish = function (id) {
-	  for(key in dishes){
+		for(key in dishes){
 			if(dishes[key].id == id) {
 				return dishes[key];
 			}
@@ -156,28 +172,28 @@ var DinnerModel = function() {
 			'quantity':0.5,
 			'unit':'',
 			'price':10
-			},{
+		},{
 			'name':'milk',
 			'quantity':30,
 			'unit':'ml',
 			'price':6
-			},{
+		},{
 			'name':'brown sugar',
 			'quantity':7,
 			'unit':'g',
 			'price':1
-			},{
+		},{
 			'name':'ground nutmeg',
 			'quantity':0.5,
 			'unit':'g',
 			'price':12
-			},{
+		},{
 			'name':'white bread',
 			'quantity':2,
 			'unit':'slices',
 			'price':2
-			}]
-		},{
+		}]
+	},{
 		'id':2,
 		'name':'Sourdough Starter',
 		'type':'starter',
@@ -188,18 +204,18 @@ var DinnerModel = function() {
 			'quantity':0.5,
 			'unit':'g',
 			'price':4
-			},{
+		},{
 			'name':'warm water',
 			'quantity':30,
 			'unit':'ml',
 			'price':0
-			},{
+		},{
 			'name':'all-purpose flour',
 			'quantity':15,
 			'unit':'g',
 			'price':2
-			}]
-		},{
+		}]
+	},{
 		'id':3,
 		'name':'Baked Brie with Peaches',
 		'type':'starter',
@@ -210,18 +226,18 @@ var DinnerModel = function() {
 			'quantity':10,
 			'unit':'g',
 			'price':8
-			},{
+		},{
 			'name':'raspberry preserves',
 			'quantity':15,
 			'unit':'g',
 			'price':10
-			},{
+		},{
 			'name':'peaches',
 			'quantity':1,
 			'unit':'',
 			'price':4
-			}]
-		},{
+		}]
+	},{
 		'id':100,
 		'name':'Meat balls',
 		'type':'main dish',
@@ -232,58 +248,58 @@ var DinnerModel = function() {
 			'quantity':115,
 			'unit':'g',
 			'price':20
-			},{
+		},{
 			'name':'sea salt',
 			'quantity':0.7,
 			'unit':'g',
 			'price':3
-			},{
+		},{
 			'name':'small onion, diced',
 			'quantity':0.25,
 			'unit':'',
 			'price':2
-			},{
+		},{
 			'name':'garlic salt',
 			'quantity':0.7,
 			'unit':'g',
 			'price':2
-			},{
+		},{
 			'name':'Italian seasoning',
 			'quantity':0.6,
 			'unit':'g',
 			'price':3
-			},{
+		},{
 			'name':'dried oregano',
 			'quantity':0.3,
 			'unit':'g',
 			'price':3
-			},{
+		},{
 			'name':'crushed red pepper flakes',
 			'quantity':0.6,
 			'unit':'g',
 			'price':3
-			},{
+		},{
 			'name':'Worcestershire sauce',
 			'quantity':6,
 			'unit':'ml',
 			'price':7
-			},{
+		},{
 			'name':'milk',
 			'quantity':20,
 			'unit':'ml',
 			'price':4
-			},{
+		},{
 			'name':'grated Parmesan cheese',
 			'quantity':5,
 			'unit':'g',
 			'price':8
-			},{
+		},{
 			'name':'seasoned bread crumbs',
 			'quantity':15,
 			'unit':'g',
 			'price':4
-			}]
-		},{
+		}]
+	},{
 		'id':101,
 		'name':'MD 2',
 		'type':'main dish',
@@ -294,18 +310,18 @@ var DinnerModel = function() {
 			'quantity':1,
 			'unit':'pieces',
 			'price':8
-			},{
+		},{
 			'name':'ingredient 2',
 			'quantity':15,
 			'unit':'g',
 			'price':7
-			},{
+		},{
 			'name':'ingredient 3',
 			'quantity':10,
 			'unit':'ml',
 			'price':4
-			}]
-		},{
+		}]
+	},{
 		'id':102,
 		'name':'MD 3',
 		'type':'main dish',
@@ -316,18 +332,18 @@ var DinnerModel = function() {
 			'quantity':2,
 			'unit':'pieces',
 			'price':8
-			},{
+		},{
 			'name':'ingredient 2',
 			'quantity':10,
 			'unit':'g',
 			'price':7
-			},{
+		},{
 			'name':'ingredient 3',
 			'quantity':5,
 			'unit':'ml',
 			'price':4
-			}]
-		},{
+		}]
+	},{
 		'id':102,
 		'name':'MD 4',
 		'type':'main dish',
@@ -338,18 +354,18 @@ var DinnerModel = function() {
 			'quantity':1,
 			'unit':'pieces',
 			'price':4
-			},{
+		},{
 			'name':'ingredient 2',
 			'quantity':12,
 			'unit':'g',
 			'price':7
-			},{
+		},{
 			'name':'ingredient 3',
 			'quantity':6,
 			'unit':'ml',
 			'price':4
-			}]
-		},{
+		}]
+	},{
 		'id':200,
 		'name':'Chocolat Ice cream',
 		'type':'dessert',
@@ -360,8 +376,8 @@ var DinnerModel = function() {
 			'quantity':100,
 			'unit':'ml',
 			'price':6
-			}]
-		},{
+		}]
+	},{
 		'id':201,
 		'name':'Vanilla Ice cream',
 		'type':'dessert',
@@ -372,8 +388,8 @@ var DinnerModel = function() {
 			'quantity':100,
 			'unit':'ml',
 			'price':6
-			}]
-		},{
+		}]
+	},{
 		'id':202,
 		'name':'Strawberry',
 		'type':'dessert',
@@ -384,8 +400,8 @@ var DinnerModel = function() {
 			'quantity':100,
 			'unit':'ml',
 			'price':6
-			}]
-		}
+		}]
+	}
 	];
 
 }

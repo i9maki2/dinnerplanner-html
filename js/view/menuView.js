@@ -3,7 +3,7 @@ var MenuView = function(model, elements)
 	this._model = model;
 	this._elements = elements;	
 
-	this._elements.menu.removeClass("hidden");
+	//this._elements.menu.removeClass("hidden");
 
 
 	this.dishes = this._elements.menu.find("#dishes");	
