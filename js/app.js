@@ -9,5 +9,7 @@ $(function() {
         menuView = new MenuView(model, {'menu': $('#menu')}),
         printView = new PrintView(model, {'print': $('#print')}),
 
-        controller = new DinnerController(model, sidebarView);
+        sideBarController = new DinnerController(model, sidebarView),
+        selectorController = new SelectorController(model, selectorView);
+
 });

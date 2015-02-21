@@ -9,10 +9,28 @@ var DinnerModel = function() {
 	this.ingredients;
 	this.totalMenuPrice;
 	this.menu = [];
+	this.selectedIndex = 0;
 
 	//Observable
 	this.guestAdded = new Event(this);
 	this.guestRemoved = new Event(this);
+	this.selectedIndexChanged = new Event(this);
+
+	//Get Selected Index From Dropdown
+	this.getSelectedIndex = function () {
+        return this.selectedIndex;
+    },
+
+	//Set Selected Index From the Dropdown
+	this.setSelectedIndex = function (index) {
+        var previousIndex;
+
+        previousIndex = this._selectedIndex;
+        this.selectedIndex = index;
+        this.selectedIndexChanged.notify({
+            previous: previousIndex
+        });        
+    }
 
 	this.setNumberOfGuests = function(num) {
 		var added = true;
