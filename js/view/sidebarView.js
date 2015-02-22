@@ -21,8 +21,6 @@ var SidebarView = function(model, elements)
     	_this.updateGuests();
     });
 
-    this._elements.sidebar.removeClass("hidden");
-
 	//Plus Minus Buttons
 	this.plusButton = $("#plusGuest");
 	this.minusButton = $("#minusGuest");
@@ -34,6 +32,13 @@ var SidebarView = function(model, elements)
 	this.minusButton.click(function () {
 		_this.minusButtonClicked.notify();
 	});
+
+	this.show =function() {
+		this._elements.sidebar.removeClass("hidden");
+	};
+	this.hide = function() {
+		this._elements.sidebar.addClass("hidden");
+	};
 
 }
 

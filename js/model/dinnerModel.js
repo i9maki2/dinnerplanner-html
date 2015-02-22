@@ -14,6 +14,7 @@ var DinnerModel = function() {
 	//Observable
 	this.guestAdded = new Event(this);
 	this.guestRemoved = new Event(this);
+	this.searchCourses = new Event(this);
 	this.selectedIndexChanged = new Event(this);
 
 	//Get Selected Index From Dropdown
@@ -160,6 +161,8 @@ var DinnerModel = function() {
 			}
 			return dish.type == type && found;
 		});	
+		this.searchCourses.notify({
+				filter: filter});	
 	}
 
 	//function that returns a dish of specific ID

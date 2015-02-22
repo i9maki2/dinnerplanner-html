@@ -9,11 +9,22 @@ function SelectorController(model, view) {
         _this.updateSelected(args.index);
     });
 
+    this._view.searchButtonClicked.attach(function (sender, args) {
+		_this.searchCourses(args.filter);
+	});
 
 }
 
 SelectorController.prototype = {
 	updateSelected: function (index) {
         this._model.setSelectedIndex(index);        
+    },
+
+    searchCourses: function(filter){
+        console.log("controller");
+    	this._model.getAllDishes(this._model.getSelectedIndex(), filter);
+    	
     }
+
+
 };

@@ -17,16 +17,16 @@ function DinnerController(model, view) {
 
 DinnerController.prototype = {
 	addGuest: function () {
-			//We should add some cool animation
-			var currentGuests = this._model.getNumberOfGuests();	        
-			this._model.setNumberOfGuests(currentGuests + 1);
-			
-			
-		},
+		//We should add some cool animation
+		var currentGuests = this._model.getNumberOfGuests();	        
+		this._model.setNumberOfGuests(currentGuests + 1);
+		
+		
+	},
 
-		removeGuest: function () {			
-	        //We should add some cool animation
-	        var currentGuests = this._model.getNumberOfGuests();	        
-	        this._model.setNumberOfGuests(currentGuests - 1);	        	        
-	    },
-	};
+	removeGuest: function () {			
+        //We should add some cool animation
+        var currentGuests = this._model.getNumberOfGuests();	        
+        this._model.setNumberOfGuests(currentGuests - 1);	        	        
+    },
+};

@@ -3,8 +3,6 @@ var RecipeView = function(model, elements)
 	this._model = model;
 	this._elements = elements;
 
-	//this._elements.recipe.removeClass("hidden");
-
 	this.ingredients = this._elements.ingredients.find("#ingr");
 
 	var dishForIngredients = this._model.getDish(1);	
@@ -17,5 +15,12 @@ var RecipeView = function(model, elements)
 		+ dishForIngredients.ingredients[i].price + ' :-</td></tr>';
 
 		this.ingredients.prepend(html1);
+	};
+
+	this.show =function() {
+			this._elements.recipe.removeClass("hidden");
+	};
+	this.hide = function() {
+		this._elements.recipe.addClass("hidden");
 	};
 }

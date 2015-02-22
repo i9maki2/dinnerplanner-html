@@ -1,10 +1,7 @@
 var MenuView = function(model, elements)
 {
 	this._model = model;
-	this._elements = elements;	
-
-	//this._elements.menu.removeClass("hidden");
-
+	this._elements = elements;		
 
 	this.dishes = this._elements.menu.find("#dishes");	
 
@@ -18,5 +15,12 @@ var MenuView = function(model, elements)
 		+ dish[i].description +'</span></div>';
 
 		this.dishes.prepend(html);
+	};
+
+	this.show =function() {
+		this._elements.menu.removeClass("hidden");
+	};
+	this.hide = function() {
+		this._elements.menu.addClass("hidden");
 	};
 }

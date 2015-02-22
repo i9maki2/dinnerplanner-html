@@ -3,8 +3,6 @@ var PrintView = function(model, elements)
 	this._model = model;
 	this._elements = elements;	
 
-	//this._elements.print.removeClass("hidden");
-
 	this.fullMenu = this._elements.print.find("#fullMenu");
 
 	var dish = this._model.getAllDishes("starter", "");
@@ -17,5 +15,12 @@ var PrintView = function(model, elements)
 					+ dish[i].description + '</p></div></div>';
 
 		this.fullMenu.prepend(html);
+	};
+
+	this.show =function() {
+		this._elements.print.removeClass("hidden");
+	};
+	this.hide = function() {
+		this._elements.print.addClass("hidden");
 	};
 }
