@@ -6565,6 +6565,9 @@ button.close {
   font-weight: normal;
   font-style: normal;
 }
+.h5-type {
+  font-family: 'leckerlioneregular';
+}
 .jumbotron {
   background: url('http://i.huffpost.com/gen/1499813/thumbs/o-FAMILY-DINNER-facebook.jpg');
   -webkit-background-size: cover;
