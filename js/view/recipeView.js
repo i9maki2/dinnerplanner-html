@@ -17,7 +17,6 @@ var RecipeView = function(model, elements)
 		_this.backButtonClicked.notify();
 	});
 
-
 	this.show = function() {
 		this._elements.recipe.removeClass("hidden");
 	};

@@ -10,14 +10,6 @@ var SelectorView = function(model, elements)
 	this.searchBarInputText = this._elements.selectDish.find("#searchBarInputText");
 	this.searchBarButton = this._elements.selectDish.find("#searchBarButton");
 
-	this.linkToDish = this._elements.selectDish.find("#dishes");
-	this.chooseDish = this._elements.selectDish.find("#dishID");	
-
-
-	/*	var selectedIndex = this.courseDropDown[0].options.selectedIndex;
-
-	console.log(this.courseDropDown[0].options[selectedIndex].value);*/
-
 	//EVENTS
 	this.listModified = new Event(this);
 	this.searchButtonClicked = new Event(this);
@@ -45,10 +37,6 @@ var SelectorView = function(model, elements)
 		_this.seacrhCurrentCourseList(e.target.filter);
 	});
 
-	this.chooseDish.click(function () {
-		_this.chooseDishButtonClicked.notify();
-	});
-
 	this.show = function() {
 		this._elements.selectDish.removeClass("hidden");
 	};
@@ -57,21 +45,49 @@ var SelectorView = function(model, elements)
 	};
 
 	this.updateView = function(){
-		this._elements.selectDish.find("#dishes").html('');
 		//Load Course List On Page Load
 		this.updateCourseList();
+		this.seacrhCurrentCourseList();
 	};
 
 }
 
 SelectorView.prototype = {
-	updateCourseList: function () {
-		
+	updateCourseList: function (dish1) {
 		this.dishes = this._elements.selectDish.find("#dishes");
 
-		this.dishes.empty();
+			console.log(dish1);		
 
-		var courseIndex = this._model.getSelectedIndex();
+			var html = '<div class="col-xs-6 col-sm-3 placeholder"><a href="" style="text-decoration: none" id="'
+			+ "dishId"+ '"> <img src="images/'
+			+ dish1.image +'" alt="..." class="img-thumbnail" style="max-height:200px; max-width:200px;"><h4>'
+			+ dish1.name +'</h4><span class="text-muted" style="font-size: 14px">'
+			+ dish1.description +'</span></a></div>';
+
+			this.dishes.append(html);
+		
+	},
+
+	seacrhCurrentCourseList: function (searchQuery){
+		this.dishyyy = this._elements.selectDish.find("#dishId");
+		//console.log(this.dishyyy);
+
+		var _this = this;
+
+		//EVENT
+		this.dishSelectedClicked = new Event(this);
+
+		// attach listeners to HTML controls  
+		this.dishyyy.click(function () {
+		_this.dishSelectedClicked.notify();
+		});
+	},
+
+	update: function() {
+	    this._elements.selectDish.find("#dishes").html('');
+
+	    var courseIndex = this._model.getSelectedIndex();
+	    var dish = 0;
 
 		if(courseIndex === 0)
 		{
@@ -86,50 +102,10 @@ SelectorView.prototype = {
 			var dish = this._model.getAllDishes("dessert", "");
 		}
 
-		for (var i = 0; i < dish.length; i++) {		
-
-			var html = '<div class="col-xs-6 col-sm-3 placeholder"><a href="'
-			+  +'" dishId="'
-			+ dish[i].id + '"> <img src="images/'
-			+ dish[i].image +'" alt="..." class="img-thumbnail" style="max-height:200px; max-width:200px;"><h4>'
-			+ dish[i].name +'</h4><span class="text-muted" style="font-size: 14px">'
-			+ dish[i].description +'</span></a></div>';
-
-			this.dishes.append(html);
-		};
-	},
-
-	seacrhCurrentCourseList: function (searchQuery){
-		this.dishes = this._elements.selectDish.find("#dishes");
-
-		this.dishes.empty();
-
-		var courseIndex = this._model.getSelectedIndex();
-
-		if(courseIndex === 0)
-		{
-			var dish = this._model.getAllDishes("main dish", searchQuery);	
-		}
-		else if(courseIndex === 1)
-		{
-			var dish = this._model.getAllDishes("starter", searchQuery);	
-		}
-		else if(courseIndex === 2)
-		{
-			var dish = this._model.getAllDishes("dessert", searchQuery);
-		}
-
-		for (var i = 0; i < dish.length; i++) {		
-
-			var html = '<div class="col-xs-6 col-sm-3 placeholder"><img src="images/'
-			+ dish[i].image +'" alt="..." class="img-thumbnail" style="max-height:200px; max-width:200px;"><h4>'
-			+ dish[i].name +'</h4><span class="text-muted" style="font-size: 14px">'
-			+ dish[i].description +'</span></div>';
-
-			this.dishes.append(html);
-		};
-
-	},
+	    _.each(model.getAllDishes(dish).toArray(), function(dish1) {
+	      this.updateCourseList(dish1);
+	    }, this);
+  	}
 
 };
 
