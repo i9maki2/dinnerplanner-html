@@ -14,6 +14,7 @@ var SidebarView = function(model, elements)
 	//If this line is removed then the placeholder will show (Number Of Guests)
 	this.updateGuests();
 	this.changeSelectedDish();
+	this.changeTotalMenuPrice();
 
     // attach MODEL listeners
     this._model.guestAdded.attach(function () {
@@ -52,24 +53,29 @@ SidebarView.prototype = {
 	updateGuests: function () {
        	//Number Of Guests
        	this.numberOfGuests = $("#numberOfGuests");
-       	this.numberOfGuests.val(this._model.numberOfGuests);
+       	this.numberOfGuests.val(this._model.getNumberOfGuests());
+       	this.changeTotalMenuPrice();
        },
-    changeSelectedDish: function(){
+    changeSelectedDish: function(){    	
 
     	this.selectedDishes = this._elements.sidebar.find("#selectedDishes");    	
 
-    	for (var i = 0; i < this._model.menu.length; i++) {
+    	_.each(this._model.selectedDishes, function(dish) {
     		var html = '<tr><td style="padding-left: 20px;"><h5>'
-    		+ this._model.menu[i].name + '</h5></td><td style="text-align: right; padding-right: 20px;"><h5>'
-    		+ this._model.getDishPrice(this._model.menu[i].id) + '</h5></td></tr>';
+    		+ dish.name + '</h5></td><td style="text-align: right; padding-right: 20px;"><h5>'
+    		+ this._model.getDishPrice(dish.id) + '</h5></td></tr>';
 
     		this.selectedDishes.append(html);
-    	};  
+    	}, this);
     		
     },
     changeTotalMenuPrice: function(){
-    	this.selectedDishes = this._elements.sidebar.find("#totalPrice");  
+    	this.selectedDishes = this._elements.sidebar.find("#totalPrice");    	 
 
-    	var html = '<h5>SEK '+ "" +' :-</h5>';  
+    	this.selectedDishes.empty();
+
+    	var html = '<h5>SEK '+ this._model.getTotalMenuPrice() +' :-</h5>'; 
+
+    	this.selectedDishes.append(html); 
     },
 };

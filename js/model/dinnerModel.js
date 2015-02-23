@@ -4,12 +4,11 @@ var DinnerModel = function() {
 	//TODO Lab 2 implement the data structure that will hold number of guest
 	// and selected dinner options for dinner menu
 	this.numberOfGuests = 0;
-	this.selectedDish;
 	this.numberOfGuests;	
 	this.ingredients = [];
 	this.totalMenuPrice;
-	this.menu = [];
 	this.selectedIndex = 0;
+	this.selectedDishes = {};
 
 	//Observable
 	this.guestAdded = new Event(this);
@@ -19,19 +18,19 @@ var DinnerModel = function() {
 
 	//Get Selected Index From Dropdown
 	this.getSelectedIndex = function () {
-        return this.selectedIndex;
-    },
+		return this.selectedIndex;
+	},
 
 	//Set Selected Index From the Dropdown
 	this.setSelectedIndex = function (index) {
-        var previousIndex;
+		var previousIndex;
 
-        previousIndex = this._selectedIndex;
-        this.selectedIndex = index;
-        this.selectedIndexChanged.notify({
-            previous: previousIndex
-        });        
-    }
+		previousIndex = this._selectedIndex;
+		this.selectedIndex = index;
+		this.selectedIndexChanged.notify({
+			previous: previousIndex
+		});        
+	}
 
 	this.setNumberOfGuests = function(num) {
 		var added = true;
@@ -56,20 +55,20 @@ var DinnerModel = function() {
 	}
 
 	//Returns the dish that is on the menu for selected type 
-	this.getSelectedDish = function() {
-
-	}
+	this.getSelectedDish = function(type) {
+		return this.selectedDishes[type];
+	};
 
 	//Returns all the dishes on the menu.
 	this.getFullMenu = function() {
-		if(this.menu.length === 0 )
+		if(this.dishes.length === 0 )
 		{
 			//Change this accordingly!
 			console.log("The Menu is empty!")
 		}
 		else
 		{
-			return this.menu;	
+			return dishes;	
 		}
 	}
 
@@ -82,15 +81,13 @@ var DinnerModel = function() {
 			console.log("The Menu is empty!")
 		}
 		else{			
-			for (var i = 0; i < this.menu.length; i++) {
-				for (var j = 0; j < this.menu[i].ingredients.length; j++) {
-					this.ingredients.push(this.menu[i].ingredients[j]);
-				};	
-			};
-
-			return this.ingredients;
+			ingredients = [];
+			dishes.forEach(function(dish) {
+				ingredients.push(_.pluck(dish.ingredients, 'name'));
+			});
+			return _.uniq(_.flatten(ingredients));
 		}
-	}
+	};
 
 	this.getDishPrice = function(id) {
 		var price = 0;
@@ -105,50 +102,27 @@ var DinnerModel = function() {
 
 	//Returns the total price of the menu (all the ingredients multiplied by number of guests).
 	this.getTotalMenuPrice = function() {
-
-		if(this.menu.length === 0 )
-		{
-			//Change this accordingly!
-			console.log("The Menu is empty!")
-		}
-		else{
-
-			this.totalMenuPrice = 0;
-
-			for (var i = 0; i < this.getAllIngredients().length; i++) {				
-				this.totalMenuPrice += this.getAllIngredients()[i].price;				
-			};
-			return this.totalMenuPrice;
-		}
-	}
+		var unitCost = 0;
+		_.each(this.selectedDishes, function(dish) {
+			unitCost += this.getDishPrice(dish.id);
+		}, this);
+		return unitCost * this.numberOfGuests;
+	};
 
 	//Adds the passed dish to the menu. If the dish of that type already exists on the menu
 	//it is removed from the menu and the new one added.
 	this.addDishToMenu = function(id) {
-		this.menu.push(this.getDish(id));
+		selectedDish = _.find(dishes, function(dish) {
+			return dish.id === id;
+		});
+		this.selectedDishes[selectedDish.type] = selectedDish;
 	}
 
 	//Removes dish from menu
 	this.removeDishFromMenu = function(id) {
-		if(this.menu.length === 0 )
-		{
-			//Change this accordingly!
-			console.log("The Menu is empty!")
-		}
-		else
-		{
-			for (var i = 0; i < this.menu.length; i++) {
-				if(this.menu[i].id === id)
-				{
-					this.menu.splice(i, 1);
-				}
-				else
-				{
-					//Change this accordingly!
-					console.log("The Dish is not in the Menu!")
-				}
-			};
-		}
+		_.reject(this.selectedDishes, function(dish) {
+			return dish.id === id;
+		});		
 	}
 
 	//function that returns all dishes of specific type (i.e. "starter", "main dish" or "dessert")
@@ -172,7 +146,7 @@ var DinnerModel = function() {
 			return dish.type == type && found;
 		});	
 		this.searchCourses.notify({
-				filter: filter});	
+			filter: filter});	
 	}
 
 	//function that returns a dish of specific ID

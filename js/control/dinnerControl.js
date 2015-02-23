@@ -22,7 +22,7 @@ DinnerController.prototype = {
 	addGuest: function () {
 		//We should add some cool animation
 		var currentGuests = this._model.getNumberOfGuests();	        
-		this._model.setNumberOfGuests(currentGuests + 1);	
+		this._model.setNumberOfGuests(currentGuests + 1);			
 	},
 
 	removeGuest: function () {			

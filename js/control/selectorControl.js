@@ -15,6 +15,10 @@ function SelectorController(model, view) {
 		_this.searchCourses(args.filter);
 	});
 
+    this._view.chooseDishButtonClicked.attach(function(e) {
+        _this.link(e);
+    });
+
 }
 
 SelectorController.prototype = {
@@ -25,6 +29,10 @@ SelectorController.prototype = {
     searchCourses: function(filter){
         console.log("controller");
     	this._model.getAllDishes(this._model.getSelectedIndex(), filter);    	
+    },
+    link: function (e){
+        e.preventDefault();
+        window.app.switchView('recipe', $(e.target).parents('a').attr('dishId'));
     }
 
 

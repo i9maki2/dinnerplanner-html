@@ -8,7 +8,11 @@ var SelectorView = function(model, elements)
 
 	//Search Bar
 	this.searchBarInputText = this._elements.selectDish.find("#searchBarInputText");
-	this.searchBarButton = this._elements.selectDish.find("#searchBarButton");		
+	this.searchBarButton = this._elements.selectDish.find("#searchBarButton");
+
+	this.linkToDish = this._elements.selectDish.find("#dishes");
+	this.chooseDish = this._elements.selectDish.find("#dishID");	
+
 
 	/*	var selectedIndex = this.courseDropDown[0].options.selectedIndex;
 
@@ -17,6 +21,7 @@ var SelectorView = function(model, elements)
 	//EVENTS
 	this.listModified = new Event(this);
 	this.searchButtonClicked = new Event(this);
+	this.chooseDishButtonClicked = new Event(this);
 
 	var _this = this;
 
@@ -33,12 +38,15 @@ var SelectorView = function(model, elements)
 		_this.updateCourseList();		
 	});	
 
-	// attach listeners to HTML controls  
 	this.searchBarButton.click(function (e) {				
 		_this.searchButtonClicked.notify({
 			filter: e.target.filter
 		});
 		_this.seacrhCurrentCourseList(e.target.filter);
+	});
+
+	this.chooseDish.click(function () {
+		_this.chooseDishButtonClicked.notify();
 	});
 
 	this.show = function() {
@@ -81,11 +89,11 @@ SelectorView.prototype = {
 		for (var i = 0; i < dish.length; i++) {		
 
 			var html = '<div class="col-xs-6 col-sm-3 placeholder"><a href="'
-			+  +'" id="'
-			+ dish[i].id + '"><img src="images/'
-			+ dish[i].image +'" alt="..." class="img-thumbnail" style="max-height:200px; max-width:200px;"></a><h4>'
+			+  +'" dishId="'
+			+ dish[i].id + '"> <img src="images/'
+			+ dish[i].image +'" alt="..." class="img-thumbnail" style="max-height:200px; max-width:200px;"><h4>'
 			+ dish[i].name +'</h4><span class="text-muted" style="font-size: 14px">'
-			+ dish[i].description +'</span></div>';
+			+ dish[i].description +'</span></a></div>';
 
 			this.dishes.append(html);
 		};

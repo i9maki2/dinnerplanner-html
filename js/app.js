@@ -26,7 +26,7 @@ var DinnerApp = function(model){
     		this.hideAll();
     		views.recipeView.show();
     		views.sidebarView.show();          
-    		controllers.descriptionController.selectDish(choice);
+    		controllers.recipeController.selectDish(choice);
     		controllers.ingredientController.selectDish(choice);
     	},
     	menu: function() {
@@ -56,7 +56,7 @@ $(function() {
       model.addDishToMenu(3);
       model.addDishToMenu(100);
       model.addDishToMenu(201);
-      model.setNumberOfGuests(4);
+      model.setNumberOfGuests(2);
 
 	window.app = new DinnerApp(model);
 	app.changeView('selector');
