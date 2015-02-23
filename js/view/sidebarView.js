@@ -61,9 +61,10 @@ SidebarView.prototype = {
     	this.selectedDishes = this._elements.sidebar.find("#selectedDishes");    	
 
     	_.each(this._model.selectedDishes, function(dish) {
-    		var html = '<tr><td style="padding-left: 20px;"><h5>'
-    		+ dish.name + '</h5></td><td style="text-align: right; padding-right: 20px;"><h5>'
-    		+ this._model.getDishPrice(dish.id) + '</h5></td></tr>';
+    		var html = '<tr><td style="padding-left: 20px;"><h4 class="h5-type" style="text-transform:capitalize;">'
+			+ dish.type + '</h4></td></tr><tr><td style="padding-left: 20px;"><h5 style="margin-top: 0px;">'
+    		+ dish.name + '</h5></td><td style="text-align: right; padding-bottom: 0px; padding-right: 20px;"><h5 style="margin-top: 0px;">'
+    		+ this._model.getDishPrice(dish.id) + '.-</h5><td><a id="removeDish" style="padding-right: 10px; text-decoration: none; padding-left: 0px;" class="glyphicon glyphicon-remove"></a></td></tr>';
 
     		this.selectedDishes.append(html);
     	}, this);
@@ -74,7 +75,7 @@ SidebarView.prototype = {
 
     	this.selectedDishes.empty();
 
-    	var html = '<h5>SEK '+ this._model.getTotalMenuPrice() +' :-</h5>'; 
+    	var html = '<h4>SEK '+ this._model.getTotalMenuPrice() +'.-</h4>';
 
     	this.selectedDishes.append(html); 
     },

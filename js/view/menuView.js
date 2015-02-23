@@ -42,8 +42,9 @@ MenuView.prototype = {
 
 		for (var i = 0; i < dish.length; i++) {
 
-			var html = '<div class="col-xs-6 col-sm-3 placeholder"><img src="images/'
-			+ dish[i].image +'" alt="..." class="img-thumbnail" style="max-height:200px; max-width:200px;"><h4>'
+			var html = '<div class="col-xs-6 col-sm-3 placeholder"><h1 class="h5-type" style="text-transform:capitalize;">'
+			+ dish[i].type + '</h1><img src="images/'
+			+ dish[i].image +'" alt="..." class="img-thumbnail" style="max-height:200px; max-width:200px; margin:20px;"><h4>'
 			+ dish[i].name +'</h4><span class="text-muted" style="font-size: 14px">'
 			+ dish[i].description +'</span></div>';
 
