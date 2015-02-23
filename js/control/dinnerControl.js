@@ -13,20 +13,24 @@ function DinnerController(model, view) {
 		_this.removeGuest();
 	});
 
+	this._view.confirmDinnerButtonClicked.attach(function() {
+    	_this.confirmDinner();
+  	});
 }
 
 DinnerController.prototype = {
 	addGuest: function () {
 		//We should add some cool animation
 		var currentGuests = this._model.getNumberOfGuests();	        
-		this._model.setNumberOfGuests(currentGuests + 1);
-		
-		
+		this._model.setNumberOfGuests(currentGuests + 1);	
 	},
 
 	removeGuest: function () {			
         //We should add some cool animation
         var currentGuests = this._model.getNumberOfGuests();	        
         this._model.setNumberOfGuests(currentGuests - 1);	        	        
+    },
+    confirmDinner: function(){    	
+		window.app.changeView('menu');
     },
 };

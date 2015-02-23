@@ -7,12 +7,13 @@ var DinnerApp = function(model){
 		menuView: new MenuView(model, {'menu': $('#menu')}),
 		printView: new PrintView(model, {'print': $('#print')}),
 	};
-	
-	var contollers = {
-		sideBarController: new DinnerController(model, views.sidebarView),
-		selectorController: new SelectorController(model, views.selectorView),
 
-        //MORE TO BE ADDED
+	var contollers = {
+		selectorController: new SelectorController(model, views.selectorView),
+		sideBarController: new DinnerController(model, views.sidebarView),
+		menuController: new MenuController(model, views.menuView),
+		printController: new PrintController(model, views.printView),
+		recipeController: new RecipeController(model, views.recipeView)        
     };
 
     var toShow = {
@@ -48,17 +49,15 @@ var DinnerApp = function(model){
     };
 };
 
-$(function() {
-	//We instantiate our model
+$(function() {	
 	var model = new DinnerModel();
-  // Test fixture
-  model.addDishToMenu(1);
-  model.addDishToMenu(3);
-  model.addDishToMenu(100);
-  model.addDishToMenu(201);
-  model.setNumberOfGuests(4);
-  // ----
-	//And create the needed controllers and views
+  
+      model.addDishToMenu(1);
+      model.addDishToMenu(3);
+      model.addDishToMenu(100);
+      model.addDishToMenu(201);
+      model.setNumberOfGuests(4);
+
 	window.app = new DinnerApp(model);
 	app.changeView('selector');
 });

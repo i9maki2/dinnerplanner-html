@@ -6,7 +6,7 @@ var DinnerModel = function() {
 	this.numberOfGuests = 0;
 	this.selectedDish;
 	this.numberOfGuests;	
-	this.ingredients;
+	this.ingredients = [];
 	this.totalMenuPrice;
 	this.menu = [];
 	this.selectedIndex = 0;
@@ -81,8 +81,7 @@ var DinnerModel = function() {
 			//Change this accordingly!
 			console.log("The Menu is empty!")
 		}
-		else{
-			this.ingredients = [];
+		else{			
 			for (var i = 0; i < this.menu.length; i++) {
 				for (var j = 0; j < this.menu[i].ingredients.length; j++) {
 					this.ingredients.push(this.menu[i].ingredients[j]);
@@ -92,6 +91,17 @@ var DinnerModel = function() {
 			return this.ingredients;
 		}
 	}
+
+	this.getDishPrice = function(id) {
+		var price = 0;
+		var dish = this.getDish(id);
+
+		dish.ingredients.forEach(function(ingredient) {
+			price += ingredient.price;
+		});
+		
+		return price;
+	};
 
 	//Returns the total price of the menu (all the ingredients multiplied by number of guests).
 	this.getTotalMenuPrice = function() {

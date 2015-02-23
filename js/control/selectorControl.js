@@ -5,6 +5,8 @@ function SelectorController(model, view) {
 
 	var _this = this; 
 
+    this._view.updateView();
+
 	this._view.listModified.attach(function (sender, args) {
         _this.updateSelected(args.index);
     });
@@ -22,8 +24,7 @@ SelectorController.prototype = {
 
     searchCourses: function(filter){
         console.log("controller");
-    	this._model.getAllDishes(this._model.getSelectedIndex(), filter);
-    	
+    	this._model.getAllDishes(this._model.getSelectedIndex(), filter);    	
     }
 
 

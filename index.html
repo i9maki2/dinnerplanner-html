@@ -70,7 +70,7 @@
 						</ul>
 						<ul class="nav nav-sidebar">
 
-							<table class="table" style="margin-bottom: 0px">
+							<table class="table" style="margin-bottom: 0px" id="selectedDishes">
 								<tr>
 									<td style="border-bottom: 1px solid #ddd; padding-left: 20px;">
 										<h5>Dish Name</h5>
@@ -102,14 +102,14 @@
 							<table class="table">
 								<tr>
 									<td style="border-top: none"></td>
-									<td style="border-top: none; text-align: right; padding-right: 20px;">
-										<h5>SEK 0.0 :-</h5>
+									<td style="border-top: none; text-align: right; padding-right: 20px;" id="totalPrice">
+										
 									</td>
 								</tr>
 							</table>
 						</ul>
 
-						<p style="text-align: center"><a href="#" class="btn btn-warning" role="button">Confirm Dinner</a>
+						<p style="text-align: center"><a href="#" id="confirmDinnerButton" class="btn btn-warning" role="button">Confirm Dinner</a>
 							</div>
 					</div>
 				</div>
@@ -218,10 +218,10 @@
 										<div class="panel-body">
 											<h1 style="display: inline;">Your Menu for 4 People</h1>
 											<div class="pull-right" style="display: inline;">
-												<button type="button" class="btn btn-warning btn-lg">
+												<button type="button" class="btn btn-warning btn-lg" id="backButton">
 													<span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span> Go back and edit dinner
 												</button>
-												<button type="button" class="btn btn-success btn-lg"><span class="glyphicon glyphicon-print"></span> Print Full Recipe</button>
+												<button id="printButton" type="button" class="btn btn-success btn-lg"><span class="glyphicon glyphicon-print"></span> Print Full Recipe</button>
 											</div>
 										</div>
 									</div>
@@ -252,7 +252,7 @@
 									<div class="panel-body">
 										<h1 style="display: inline;">Your Menu for <span id="numberOfGuests"></span> Guests</h1>
 										<div class="pull-right" style="display: inline;">
-											<button type="button" class="btn btn-warning btn-lg">
+											<button id="backButton" type="button" class="btn btn-warning btn-lg">
 												<span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span> Go back and edit dinner
 											</button>
 										</div>
@@ -289,6 +289,9 @@
 		<script src="js/view/printView.js"></script>
 		<script src="js/control/dinnerControl.js"></script>
 		<script src="js/control/selectorControl.js"></script>
+		<script src="js/control/menuControl.js"></script>
+		<script src="js/control/printControl.js"></script>
+		<script src="js/control/recipeControl.js"></script>
 		<script src="bower_components/underscore/underscore-min.js"></script>
 
 </body>

@@ -41,14 +41,17 @@ var SelectorView = function(model, elements)
 		_this.seacrhCurrentCourseList(e.target.filter);
 	});
 
-	//Load Course List On Page Load (first time)
-	this.updateCourseList();
-
-	this.show =function() {
+	this.show = function() {
 		this._elements.selectDish.removeClass("hidden");
 	};
 	this.hide = function() {
 		this._elements.selectDish.addClass("hidden");
+	};
+
+	this.updateView = function(){
+		this._elements.selectDish.find("#dishes").html('');
+		//Load Course List On Page Load
+		this.updateCourseList();
 	};
 
 }
