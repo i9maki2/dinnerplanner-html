@@ -15,10 +15,9 @@ function SelectorController(model, view) {
 		_this.searchCourses(args.filter);
 	});
 
-    this._view.chooseDishButtonClicked.attach(function(e) {
-        _this.link(e);
+    this._view.dishSelectedClicked.attach(function () {
+        _this.redirectTo();
     });
-
 }
 
 SelectorController.prototype = {
@@ -30,9 +29,9 @@ SelectorController.prototype = {
         console.log("controller");
     	this._model.getAllDishes(this._model.getSelectedIndex(), filter);    	
     },
-    link: function (e){
-        e.preventDefault();
-        window.app.switchView('recipe', $(e.target).parents('a').attr('dishId'));
+    redirectTo: function (){
+        console.log("WTF?");
+        window.app.changeView('recipe');
     }
 
 
