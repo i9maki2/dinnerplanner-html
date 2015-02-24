@@ -14,6 +14,6 @@ function PrintController(model, view) {
 
 PrintController.prototype = {
     backButton: function(){        
-		window.app.changeView('menu');
+		window.app.changeView('selector');
     }
 };

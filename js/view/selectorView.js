@@ -27,7 +27,7 @@ var SelectorView = function(model, elements)
 		_this.listModified.notify({
 			index: e.target.selectedIndex
 		});
-		_this.updateCourseList();		
+		_this.update();		
 	});	
 
 	this.searchBarButton.click(function (e) {				
@@ -46,7 +46,7 @@ var SelectorView = function(model, elements)
 
 	this.updateView = function(){
 		//Load Course List On Page Load
-		this.updateCourseList();
+		this.update();
 		this.seacrhCurrentCourseList();
 	};
 
@@ -54,36 +54,25 @@ var SelectorView = function(model, elements)
 
 SelectorView.prototype = {
 	updateCourseList: function (dish1) {
-		this.dishes = this._elements.selectDish.find("#dishes");
+		this.dishes = this._elements.selectDish.find("#dishes");				
 
-			console.log(dish1);		
-
-			var html = '<div class="col-xs-6 col-sm-3 placeholder"><a href="" style="text-decoration: none" id="'
-			+ "dishId"+ '"> <img src="images/'
+			var html = '<div class="col-xs-6 col-sm-3 placeholder"><a href="#" style="text-decoration: none" dishId="'
+			+ dish1.id + '"> <img src="images/'
 			+ dish1.image +'" alt="..." class="img-thumbnail" style="max-height:200px; max-width:200px;"><h4>'
 			+ dish1.name +'</h4><span class="text-muted" style="font-size: 14px">'
 			+ dish1.description +'</span></a></div>';
 
 			this.dishes.append(html);
-		
 	},
 
 	seacrhCurrentCourseList: function (searchQuery){
-		this.dishyyy = this._elements.selectDish.find("#dishId");
-		//console.log(this.dishyyy);
+		this.pickDish = this._elements.selectDish.find(".dish-picker");
+		//console.log(this.pickDish);
 
-		var _this = this;
-
-		//EVENT
-		this.dishSelectedClicked = new Event(this);
-
-		// attach listeners to HTML controls  
-		this.dishyyy.click(function () {
-		_this.dishSelectedClicked.notify();
-		});
 	},
 
 	update: function() {
+
 	    this._elements.selectDish.find("#dishes").html('');
 
 	    var courseIndex = this._model.getSelectedIndex();
@@ -91,18 +80,18 @@ SelectorView.prototype = {
 
 		if(courseIndex === 0)
 		{
-			var dish = this._model.getAllDishes("main dish", "");	
+			var dish = "main dish";	
 		}
 		else if(courseIndex === 1)
 		{
-			var dish = this._model.getAllDishes("starter", "");	
+			var dish = "starter";
 		}
 		else if(courseIndex === 2)
 		{
-			var dish = this._model.getAllDishes("dessert", "");
+			var dish = "dessert";
 		}
 
-	    _.each(model.getAllDishes(dish).toArray(), function(dish1) {
+	    _.each(this._model.getAllDishes(dish).toArray(), function(dish1) {	    	
 	      this.updateCourseList(dish1);
 	    }, this);
   	}

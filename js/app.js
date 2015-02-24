@@ -25,7 +25,8 @@ var DinnerApp = function(model){
     	recipe: function(choice) {
     		this.hideAll();
     		views.recipeView.show();
-    		views.sidebarView.show();          
+    		views.sidebarView.show();
+            contollers.recipeController.reciveDish(choice);          
     	},
     	menu: function() {
     		this.hideAll();

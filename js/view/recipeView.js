@@ -11,7 +11,8 @@ var RecipeView = function(model, elements)
 	this.backButtonClicked = new Event(this);
 
 	//Buttons
-	this.backButton = this._elements.ingredients.find("#backButton");
+	this.backButton = this._elements.recipe.find("#backButton");
+	this.confirmDish = this._elements.recipe.find("#confirmDish");
 
 	this.backButton.click(function () {		
 		_this.backButtonClicked.notify();
@@ -24,26 +25,27 @@ var RecipeView = function(model, elements)
 		this._elements.recipe.addClass("hidden");
 	};
 
-	this.updateView = function(){
+	this.updateView = function(selectedDish){
 		this.ingredients.html('');
 		//Load Course List On Page Load
-		this.updateList();
+		this.updateList(selectedDish);
 	};
 }
 
 RecipeView.prototype = {
-	updateList: function()
-	{
-		var dishForIngredients = this._model.getDish(1);	
-
-		for (var i = 0; i < dishForIngredients.ingredients.length; i++) {
+	updateList: function(selectedDish)
+	{				
+		for (var i = 0; i < selectedDish.ingredients.length; i++) {
 
 			var html1 = '<tr><td>'
-			+ dishForIngredients.ingredients[i].quantity + " " + dishForIngredients.ingredients[i].unit +'</td><td>'
-			+ dishForIngredients.ingredients[i].name + '</td><td>SEK</td><td>'
-			+ dishForIngredients.ingredients[i].price + ' :-</td></tr>';
+			+ selectedDish.ingredients[i].quantity + " " + selectedDish.ingredients[i].unit +'</td><td>'
+			+ selectedDish.ingredients[i].name + '</td><td>SEK</td><td>'
+			+ selectedDish.ingredients[i].price + ' :-</td></tr>';
 
 			this.ingredients.prepend(html1);
 		};
-	}
+	},
+	backButton: function(){        
+		window.app.changeView('selector');
+    },
 };

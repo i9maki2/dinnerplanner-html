@@ -50,7 +50,5 @@ MenuView.prototype = {
 
 			this.dishes.prepend(html);
 		};
-
 	}
-
 }

@@ -15,8 +15,8 @@ function SelectorController(model, view) {
 		_this.searchCourses(args.filter);
 	});
 
-    this._view.dishSelectedClicked.attach(function () {
-        _this.redirectTo();
+    this._view.pickDish.click(function (e) {
+        _this.redirectTo(e);
     });
 }
 
@@ -26,12 +26,12 @@ SelectorController.prototype = {
     },
 
     searchCourses: function(filter){
-        console.log("controller");
+        //console.log("controller");
     	this._model.getAllDishes(this._model.getSelectedIndex(), filter);    	
     },
-    redirectTo: function (){
-        console.log("WTF?");
-        window.app.changeView('recipe');
+    redirectTo: function (e){
+        e.preventDefault();
+        window.app.changeView('recipe', $(e.target).parents('a').attr('dishId'));
     }
 
 
