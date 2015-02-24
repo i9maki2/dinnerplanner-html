@@ -16,21 +16,30 @@ function DinnerController(model, view) {
 	this._view.confirmDinnerButtonClicked.attach(function() {
     	_this.confirmDinner();
   	});
+  	this._view.removeDishFromMenu.click(function (e) {
+  		//Not Working
+  		//console.log($(e.target).parents('a').attr('dishId'));
+        _this.removeDish(e);
+    });
 }
 
 DinnerController.prototype = {
-	addGuest: function () {
-		//We should add some cool animation
+	addGuest: function () {		
 		var currentGuests = this._model.getNumberOfGuests();	        
 		this._model.setNumberOfGuests(currentGuests + 1);			
 	},
-
-	removeGuest: function () {			
-        //We should add some cool animation
+	removeGuest: function () {			        
         var currentGuests = this._model.getNumberOfGuests();	        
         this._model.setNumberOfGuests(currentGuests - 1);	        	        
     },
     confirmDinner: function(){    	
 		window.app.changeView('menu');
+    },
+    removeDish: function(e)
+    {
+    	//Not Working (dish is missing)
+    	//console.log(e);
+    	//this._model.removeDishFromMenu(parseInt(dish)); 
+
     },
 };

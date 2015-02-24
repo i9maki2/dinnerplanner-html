@@ -27,7 +27,7 @@
 								<hr>
 								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin consectetur nunc vel urna ornare, sed feugiat enim ultrices. Proin quis nulla turpis. Vivamus convallis quam quis sodales venenatis. Donec pharetra nunc non blandit lobortis. Cras purus libero, feugiat et tempus ac, hendrerit ac ex.</p>
 								<p>Start quickly!</p>
-								<p><a href="" class="btn btn-primary" role="button">Create new dinner!</a>
+								<p><a href="#" id="createButton" class="btn btn-primary" role="button">Create new dinner!</a>
 								</p>
 							</div>
 						</div>
@@ -75,8 +75,7 @@
 									<td style=" padding-left: 20px;">
 										<h3 style="font-family: 'leckerlioneregular';">Your Menu</h3>
 									</td>
-									<td style="text-align: right; padding-right: 20px;">
-										<!--										<h6>Cost</h6>-->
+									<td style="text-align: right; padding-right: 20px;">										
 									</td>
 								</tr>
 							</table>
@@ -142,31 +141,28 @@
 				<div id="recipe" class="hidden">
 					<div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
 						<div class="row">
-							<div class="col-xs-12 col-md-12">
-								<div class="spacer20"></div>
-								<a href="#" id="backButton" type="button" class="btn btn-warning btn-lg">
-									<span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span> Back to select dishes
-								</a>
-								<h1>Meatballs</h1>
-							</div>
-							<div class="col-xs-12 col-md-6">
-
-								<a href="#" class="thumbnail">
-									<img src="images/meatballs.jpg">
-								</a>
-								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin consectetur nunc vel urna ornare, sed feugiat enim ultrices. Proin quis nulla turpis. Vivamus convallis quam quis sodales venenatis. Donec pharetra nunc non blandit lobortis. Cras purus libero, feugiat et tempus ac, hendrerit ac ex.</p>
-
-
-
-								<h1>Preparation</h1>
-								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin consectetur nunc vel urna ornare, sed feugiat enim ultrices. Proin quis nulla turpis. Vivamus convallis quam quis sodales venenatis. Donec pharetra nunc non blandit lobortis. Cras purus libero, feugiat et tempus ac, hendrerit ac ex.</p>
+							<div id="dish">
+								<div class="col-xs-12 col-md-12">
+									<div class="spacer20"></div>
+									<a href="#" id="backButton" type="button" class="btn btn-warning btn-lg">
+										<span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span> Back to select dishes
+									</a>
+									<h1 id="dishName"></h1>
+								</div>
+								<div class="col-xs-12 col-md-6">
+									<a href="#" class="thumbnail">
+										<img id="dishPicture" src="">
+									</a>					
+									<h1>Preparation</h1>
+									<p id="preparation"></p>
+								</div>
 							</div>
 
 							<div class="col-xs-12 col-md-4">
 								<div id="ingredients">
 									<div class="panel panel-warning">
 										<div class="panel-heading">
-											<h3 class="panel-title">Ingredients for <span id="numberOfGuests">Number</span> People</h3>
+											<h3 class="panel-title">Ingredients for <span id="numberOfGuests"></span> People</h3>
 										</div>
 										<div class="panel-body">
 											<div class="panel panel-warning">
@@ -203,7 +199,7 @@
 								<div class="col-xs-24 col-sm-12 placeholder">
 									<div class="panel panel-warning">
 										<div class="panel-body">
-											<h1 style="display: inline;">Your Menu for 4 People</h1>
+											<h1 style="display: inline;">Your Menu for <span id="numberOfGuests"></span> People</h1>
 											<div class="pull-right" style="display: inline;">
 												<button type="button" class="btn btn-warning btn-lg" id="backButton">
 													<span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span> Go back and edit dinner
@@ -270,8 +266,10 @@
 		<script src="js/view/recipeView.js"></script>
 		<script src="js/view/menuView.js"></script>
 		<script src="js/view/printView.js"></script>
+		<script src="js/view/indexView.js"></script>
 		<script src="js/control/dinnerControl.js"></script>
 		<script src="js/control/selectorControl.js"></script>
+		<script src="js/control/indexController.js"></script>
 		<script src="js/control/menuControl.js"></script>
 		<script src="js/control/printControl.js"></script>
 		<script src="js/control/recipeControl.js"></script>

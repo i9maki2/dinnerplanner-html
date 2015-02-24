@@ -26,6 +26,7 @@ var SidebarView = function(model, elements)
 	this.plusButton = this._elements.sidebar.find("#plusGuest");	
 	this.minusButton = this._elements.sidebar.find("#minusGuest");
 	this.confirmDinnerButton = this._elements.sidebar.find("#confirmDinnerButton");
+	this.removeDishFromMenu = this._elements.sidebar.find("#selectedDishes");	
 	
 
 	// attach listeners to HTML controls  
@@ -66,7 +67,8 @@ SidebarView.prototype = {
     		var html = '<tr><td style="padding-left: 20px;"><h4 class="h5-type" style="text-transform:capitalize;">'
 			+ dish.type + '</h4></td></tr><tr><td style="padding-left: 20px;"><h5 style="margin-top: 0px;">'
     		+ dish.name + '</h5></td><td style="text-align: right; padding-bottom: 0px; padding-right: 20px;"><h5 style="margin-top: 0px;">'
-    		+ this._model.getDishPrice(dish.id) + '.-</h5><td><a id="removeDish" style="padding-right: 10px; text-decoration: none; padding-left: 0px;" class="glyphicon glyphicon-remove"></a></td></tr>';
+    		+ this._model.getDishPrice(dish.id) + '.-</h5><td><a href="#" dishId="'
+			+ dish.id + '" style="padding-right: 10px; text-decoration: none; padding-left: 0px;" class="glyphicon glyphicon-remove"></a></td></tr>';
 
     		this.selectedDishes.append(html);
 

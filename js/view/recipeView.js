@@ -13,6 +13,10 @@ var RecipeView = function(model, elements)
 	//Buttons
 	this.backButton = this._elements.recipe.find("#backButton");
 	this.confirmDish = this._elements.recipe.find("#confirmDish");
+	this.dishName = this._elements.dish.find("#dishName");
+	this.dishPicture = this._elements.dish.find("#dishPicture");
+	this.preparation = this._elements.dish.find("#preparation");
+	this.numberOfGuests = this._elements.ingredients.find("#numberOfGuests");
 
 	this.backButton.click(function () {		
 		_this.backButtonClicked.notify();
@@ -29,6 +33,7 @@ var RecipeView = function(model, elements)
 		this.ingredients.html('');
 		//Load Course List On Page Load
 		this.updateList(selectedDish);
+		this.updateDish(selectedDish);
 	};
 }
 
@@ -44,8 +49,19 @@ RecipeView.prototype = {
 
 			this.ingredients.prepend(html1);
 		};
+
+		this.numberOfGuests.html(this._model.getNumberOfGuests());
 	},
 	backButton: function(){        
 		window.app.changeView('selector');
     },
+    updateDish: function(selectedDish){    	
+    	this.dishName.html("");
+    	this.dishName.html(selectedDish.name);
+    	
+    	this.dishPicture.attr('src', 'images/' + selectedDish.image);    	
+
+    	this.preparation.html("");
+    	this.preparation.html(selectedDish.description);
+    }
 };

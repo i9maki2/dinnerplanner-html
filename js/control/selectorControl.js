@@ -17,6 +17,7 @@ function SelectorController(model, view) {
 
     this._view.pickDish.click(function (e) {
         _this.redirectTo(e);
+        
     });
 }
 
@@ -25,8 +26,7 @@ SelectorController.prototype = {
         this._model.setSelectedIndex(index);        
     },
 
-    searchCourses: function(filter){
-        //console.log("controller");
+    searchCourses: function(filter){        
     	this._model.getAllDishes(this._model.getSelectedIndex(), filter);    	
     },
     redirectTo: function (e){

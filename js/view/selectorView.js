@@ -9,6 +9,7 @@ var SelectorView = function(model, elements)
 	//Search Bar
 	this.searchBarInputText = this._elements.selectDish.find("#searchBarInputText");
 	this.searchBarButton = this._elements.selectDish.find("#searchBarButton");
+	this.pickDish = this._elements.selectDish.find(".dish-picker");	
 
 	//EVENTS
 	this.listModified = new Event(this);
@@ -34,7 +35,7 @@ var SelectorView = function(model, elements)
 		_this.searchButtonClicked.notify({
 			filter: e.target.filter
 		});
-		_this.seacrhCurrentCourseList(e.target.filter);
+		_this.seacrhCurrentCourseList();
 	});
 
 	this.show = function() {
@@ -65,10 +66,8 @@ SelectorView.prototype = {
 			this.dishes.append(html);
 	},
 
-	seacrhCurrentCourseList: function (searchQuery){
-		this.pickDish = this._elements.selectDish.find(".dish-picker");
-		//console.log(this.pickDish);
-
+	seacrhCurrentCourseList: function (){
+			
 	},
 
 	update: function() {

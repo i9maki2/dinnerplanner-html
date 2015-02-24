@@ -3,9 +3,10 @@ var DinnerApp = function(model){
 	var views = {      
 		selectorView: new SelectorView(model, {'selectDish': $('#selectDish')}),
 		sidebarView: new SidebarView(model, {'sidebar': $('#sidebar')}),
-		recipeView: new RecipeView(model, {'recipe': $('#recipe'),'ingredients': $('#ingredients'),}),
+		recipeView: new RecipeView(model, {'recipe': $('#recipe'),'ingredients': $('#ingredients'),'dish': $('#dish')}),
 		menuView: new MenuView(model, {'menu': $('#menu')}),
 		printView: new PrintView(model, {'print': $('#print')}),
+        indexView: new IndexView(model, {'index': $('#index')}),
 	};
 
 	var contollers = {
@@ -13,10 +14,15 @@ var DinnerApp = function(model){
 		sideBarController: new DinnerController(model, views.sidebarView),
 		menuController: new MenuController(model, views.menuView),
 		printController: new PrintController(model, views.printView),
-		recipeController: new RecipeController(model, views.recipeView)        
+		recipeController: new RecipeController(model, views.recipeView),
+        indexController: new IndexController(model, views.indexView),        
     };
 
     var toShow = {
+        index: function() {
+            this.hideAll();
+            views.indexView.show();            
+        },
     	selector: function() {
     		this.hideAll();
     		views.selectorView.show();
@@ -52,5 +58,5 @@ $(function() {
 	var model = new DinnerModel();
 
 	window.app = new DinnerApp(model);
-	app.changeView('selector');
+	app.changeView('index');
 });
