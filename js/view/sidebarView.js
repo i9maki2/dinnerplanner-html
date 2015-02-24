@@ -67,6 +67,7 @@ SidebarView.prototype = {
     		+ this._model.getDishPrice(dish.id) + '.-</h5><td><a id="removeDish" style="padding-right: 10px; text-decoration: none; padding-left: 0px;" class="glyphicon glyphicon-remove"></a></td></tr>';
 
     		this.selectedDishes.append(html);
+
     	}, this);
     		
     },
