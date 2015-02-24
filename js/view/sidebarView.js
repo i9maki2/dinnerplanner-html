@@ -12,9 +12,7 @@ var SidebarView = function(model, elements)
 	var _this = this;
 
 	//If this line is removed then the placeholder will show (Number Of Guests)
-	this.updateGuests();
-	this.changeSelectedDish();
-	this.changeTotalMenuPrice();
+	this.updateGuests();		
 
     // attach MODEL listeners
     this._model.guestAdded.attach(function () {
@@ -43,6 +41,8 @@ var SidebarView = function(model, elements)
 
 	this.show =function() {
 		this._elements.sidebar.removeClass("hidden");
+		this.changeTotalMenuPrice();
+		this.changeSelectedDish();
 	};
 	this.hide = function() {
 		this._elements.sidebar.addClass("hidden");
@@ -58,7 +58,9 @@ SidebarView.prototype = {
        },
     changeSelectedDish: function(){    	
 
-    	this.selectedDishes = this._elements.sidebar.find("#selectedDishes");    	
+    	this.selectedDishes = this._elements.sidebar.find("#selectedDishes"); 
+
+    	this.selectedDishes.empty();   	
 
     	_.each(this._model.selectedDishes, function(dish) {
     		var html = '<tr><td style="padding-left: 20px;"><h4 class="h5-type" style="text-transform:capitalize;">'
@@ -76,7 +78,7 @@ SidebarView.prototype = {
 
     	this.selectedDishes.empty();
 
-    	var html = '<h4>SEK '+ this._model.getTotalMenuPrice() +'.-</h4>';
+    	var html = '<h4>SEK '+ this._model.getTotalMenuPrice() +':-</h4>';
 
     	this.selectedDishes.append(html); 
     },

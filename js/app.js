@@ -50,12 +50,6 @@ var DinnerApp = function(model){
 
 $(function() {	
 	var model = new DinnerModel();
-  
-      model.addDishToMenu(1);
-      model.addDishToMenu(3);
-      model.addDishToMenu(100);
-      model.addDishToMenu(201);
-      model.setNumberOfGuests(2);
 
 	window.app = new DinnerApp(model);
 	app.changeView('selector');

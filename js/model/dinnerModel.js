@@ -15,6 +15,7 @@ var DinnerModel = function() {
 	this.guestRemoved = new Event(this);
 	this.searchCourses = new Event(this);
 	this.selectedIndexChanged = new Event(this);
+	this.dishAddedToMenu = new Event(this);
 
 	//Get Selected Index From Dropdown
 	this.getSelectedIndex = function () {
@@ -116,6 +117,9 @@ var DinnerModel = function() {
 			return dish.id === id;
 		});
 		this.selectedDishes[selectedDish.type] = selectedDish;
+		this.dishAddedToMenu.notify({
+			id: id
+		});  
 	}
 
 	//Removes dish from menu

@@ -2,7 +2,7 @@ function RecipeController(model, view) {
 
 	this._model = model;
 	this._view = view;
-	this.currentDish;
+    currentDish = '';	
 
 	var _this = this;   
 
@@ -11,12 +11,10 @@ function RecipeController(model, view) {
 	});
 
 	this._view.confirmDish.click(function(e) {		
-    	e.preventDefault();
-    	console.log(this.currentDish);
+    	e.preventDefault();    	
 
-    	///FIXXXXX
-    	this._model.addDishToMenu(parseInt(this.currentDish));
-    	window.app.switchView('select');
+    	_this.action(currentDish);
+    	
   	});
 }
 
@@ -25,8 +23,12 @@ RecipeController.prototype = {
 		window.app.changeView('selector');
     },
 
-    reciveDish: function(dish){
-    	this.currentDish = dish;
+    reciveDish: function(dish){                   
  		this._view.updateView(this._model.getDish(dish));
+        currentDish = dish;        
+    },
+    action: function(dish){
+        this._model.addDishToMenu(parseInt(dish));        
+        window.app.changeView('selector');
     }
 };
