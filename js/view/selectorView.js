@@ -79,11 +79,11 @@ SelectorView.prototype = {
 
 		if(courseIndex === 0)
 		{
-			var dish = "main dish";	
+			var dish = "starter";
 		}
 		else if(courseIndex === 1)
 		{
-			var dish = "starter";
+			var dish = "main dish";
 		}
 		else if(courseIndex === 2)
 		{
