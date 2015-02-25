@@ -147,9 +147,7 @@ var DinnerModel = function() {
 				}
 			}
 			return dish.type == type && found;
-		});	
-		this.searchCourses.notify({
-			filter: filter});	
+		});		
 	}
 
 	//function that returns a dish of specific ID

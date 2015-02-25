@@ -25,21 +25,15 @@ var SelectorView = function(model, elements)
 
 	// attach listeners to HTML controls
 	this.courseDropDown.change(function (e) {
+		_this.clearInputText();
 		_this.listModified.notify({
 			index: e.target.selectedIndex
 		});
 		_this.update();		
 	});	
 
-	this.searchBarButton.click(function (e) {				
-		_this.searchButtonClicked.notify({
-			filter: e.target.filter
-		});
-		_this.seacrhCurrentCourseList();
-	});
-
 	this.show = function() {
-		this._elements.selectDish.removeClass("hidden");
+		this._elements.selectDish.removeClass("hidden");		
 	};
 	this.hide = function() {
 		this._elements.selectDish.addClass("hidden");
@@ -47,8 +41,10 @@ var SelectorView = function(model, elements)
 
 	this.updateView = function(){
 		//Load Course List On Page Load
-		this.update();
-		this.seacrhCurrentCourseList();
+		this.update();		
+	};
+	this.filter = function(){
+		return this.searchBarInputText[0].value;
 	};
 
 }
@@ -66,13 +62,17 @@ SelectorView.prototype = {
 			this.dishes.append(html);
 	},
 
-	seacrhCurrentCourseList: function (){
-			
+	clearInputText: function (){
+		this.searchBarInputText[0].value = "";
+
 	},
 
+	
 	update: function() {
 
-	    this._elements.selectDish.find("#dishes").html('');
+	    this._elements.selectDish.find("#dishes").empty();
+
+	    var filter = this.searchBarInputText[0].value;
 
 	    var courseIndex = this._model.getSelectedIndex();
 	    var dish = 0;
@@ -90,7 +90,7 @@ SelectorView.prototype = {
 			var dish = "dessert";
 		}
 
-	    _.each(this._model.getAllDishes(dish).toArray(), function(dish1) {	    	
+	    _.each(this._model.getAllDishes(dish, filter).toArray(), function(dish1) {	    	
 	      this.updateCourseList(dish1);
 	    }, this);
   	}
