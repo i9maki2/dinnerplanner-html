@@ -29,8 +29,11 @@ DinnerController.prototype = {
 		this._model.setNumberOfGuests(currentGuests + 1);			
 	},
 	removeGuest: function () {			        
-        var currentGuests = this._model.getNumberOfGuests();	        
-        this._model.setNumberOfGuests(currentGuests - 1);	        	        
+        var currentGuests = this._model.getNumberOfGuests();	
+        if(!currentGuests == 0)
+        {
+          this._model.setNumberOfGuests(currentGuests - 1);                     
+        }                
     },
     confirmDinner: function(){    	
 		window.app.changeView('menu');

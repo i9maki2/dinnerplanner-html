@@ -15,8 +15,7 @@ var RecipeView = function(model, elements)
 	this.confirmDish = this._elements.recipe.find("#confirmDish");
 	this.dishName = this._elements.dish.find("#dishName");
 	this.dishPicture = this._elements.dish.find("#dishPicture");
-	this.preparation = this._elements.dish.find("#preparation");
-	this.numberOfGuests = this._elements.ingredients.find("#numberOfGuests");
+	this.preparation = this._elements.dish.find("#preparation");	
 
 	this.backButton.click(function () {		
 		_this.backButtonClicked.notify();
@@ -48,9 +47,7 @@ RecipeView.prototype = {
 			+ selectedDish.ingredients[i].price + ' :-</td></tr>';
 
 			this.ingredients.prepend(html1);
-		};
-
-		this.numberOfGuests.html(this._model.getNumberOfGuests());
+		};		
 	},
 	backButton: function(){        
 		window.app.changeView('selector');

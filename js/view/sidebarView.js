@@ -27,7 +27,6 @@ var SidebarView = function(model, elements)
 	this.minusButton = this._elements.sidebar.find("#minusGuest");
 	this.confirmDinnerButton = this._elements.sidebar.find("#confirmDinnerButton");
 	this.removeDishFromMenu = this._elements.sidebar.find("#selectedDishes");	
-	
 
 	// attach listeners to HTML controls  
 	this.plusButton.click(function () {
@@ -44,6 +43,7 @@ var SidebarView = function(model, elements)
 		this._elements.sidebar.removeClass("hidden");
 		this.changeTotalMenuPrice();
 		this.changeSelectedDish();
+		this.disableButton();
 	};
 	this.hide = function() {
 		this._elements.sidebar.addClass("hidden");
@@ -55,7 +55,7 @@ SidebarView.prototype = {
        	//Number Of Guests
        	this.numberOfGuests = $("#numberOfGuests");
        	this.numberOfGuests.val(this._model.getNumberOfGuests());
-       	this.changeTotalMenuPrice();
+       	this.changeTotalMenuPrice();       	
        },
     changeSelectedDish: function(){    	
 
@@ -84,4 +84,12 @@ SidebarView.prototype = {
 
     	this.selectedDishes.append(html); 
     },
+    disableButton: function()
+    {
+    	var array = _.values(this._model.selectedDishes);    	
+
+    	if (_.isEmpty(array) == false) {
+       		console.log(this.numberOfGuests = $("#confirmDinnerButton").attr('disabled', false));	
+       	}
+    }
 };
