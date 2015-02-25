@@ -54,5 +54,10 @@ MenuView.prototype = {
 			this.dishes.append(html);
     }, this);
 		
+		var total = '<div class="col-xs-6 col-sm-3" style="border-left: 2px solid #ddd; text-align: center;"><h1 class="h5-type" style="text-transform:capitalize;">Total</h1><img src="images/sum.png" class="img-thumbnail" style="max-height:200px; max-width:200px;"><h1 style="text-decoration: underline;">'
+			+ this._model.getTotalMenuPrice() + ' SEK</h1></div>';
+
+		this.dishes.append(total);
+
 	}
 }
